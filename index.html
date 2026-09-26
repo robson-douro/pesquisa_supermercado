@@ -113,6 +113,24 @@
             box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
         }
 
+        .btn-search {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 5px;
+        }
+
+        .btn-search:hover {
+            background-color: var(--accent-hover);
+        }
+
         .results {
             margin-top: 24px;
             display: flex;
@@ -197,7 +215,7 @@
             align-items: flex-end;
         }
 
-        button {
+        .btn-admin {
             padding: 12px 20px;
             background-color: var(--accent);
             color: white;
@@ -208,9 +226,10 @@
             font-weight: 500;
             transition: background-color 0.2s ease;
             height: 46px;
+            width: 100%;
         }
 
-        button:hover {
+        .btn-admin:hover {
             background-color: var(--accent-hover);
         }
 
@@ -242,39 +261,45 @@
 
     <div class="header">
         <h1>Comparador de Preços</h1>
-        <p>Pesquise e pressione Enter para comparar valores em tempo real</p>
+        <p>Preencha os campos e utilize o botão Buscar ou a tecla Enter</p>
     </div>
     
     <div class="comparison-container">
         <!-- Opção A -->
         <div class="search-column">
             <h2>Pesquisa Opção A</h2>
-            <div class="search-inputs">
-                <div class="form-group">
-                    <label for="estabA">Estabelecimento</label>
-                    <input type="text" id="estabA" list="listaEstabelecimentos" placeholder="Digite e aperte Enter..." onkeydown="checarEnter(event, 'A')" change="buscarA()">
+            <form onsubmit="buscarA(event)">
+                <div class="search-inputs">
+                    <div class="form-group">
+                        <label for="estabA">Estabelecimento</label>
+                        <input type="text" id="estabA" list="listaEstabelecimentos" placeholder="Selecione ou digite..." autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="prodA">Produto</label>
+                        <input type="text" id="prodA" list="listaProdutos" placeholder="Selecione ou digite..." autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn-search">Buscar</button>
                 </div>
-                <div class="form-group">
-                    <label for="prodA">Produto</label>
-                    <input type="text" id="prodA" list="listaProdutos" placeholder="Digite e aperte Enter..." onkeydown="checarEnter(event, 'A')" change="buscarA()">
-                </div>
-            </div>
+            </form>
             <div class="results" id="resultadosA"></div>
         </div>
 
         <!-- Opção B -->
         <div class="search-column">
             <h2>Pesquisa Opção B</h2>
-            <div class="search-inputs">
-                <div class="form-group">
-                    <label for="estabB">Estabelecimento</label>
-                    <input type="text" id="estabB" list="listaEstabelecimentos" placeholder="Digite e aperte Enter..." onkeydown="checarEnter(event, 'B')" change="buscarB()">
+            <form onsubmit="buscarB(event)">
+                <div class="search-inputs">
+                    <div class="form-group">
+                        <label for="estabB">Estabelecimento</label>
+                        <input type="text" id="estabB" list="listaEstabelecimentos" placeholder="Selecione ou digite..." autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="prodB">Produto</label>
+                        <input type="text" id="prodB" list="listaProdutos" placeholder="Selecione ou digite..." autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn-search">Buscar</button>
                 </div>
-                <div class="form-group">
-                    <label for="prodB">Produto</label>
-                    <input type="text" id="prodB" list="listaProdutos" placeholder="Digite e aperte Enter..." onkeydown="checarEnter(event, 'B')" change="buscarB()">
-                </div>
-            </div>
+            </form>
             <div class="results" id="resultadosB"></div>
         </div>
     </div>
@@ -302,23 +327,9 @@
                     <label>Data da Coleta</label>
                     <input type="date" id="cadData" required>
                 </div>
-                <button type="submit">Gerar Registro</button>
+                <button type="submit" class="btn-admin">Gerar Registro</button>
             </div>
         </form>
-
-        <div class="form-group output-box">
-            <label>Clique para copiar e colar no seu arquivo <code>dados.json</code>:</label>
-            <input type="text" id="resultadoJson" readonly placeholder='{"estabelecimento": "..."}' onclick="this.select(); document.execCommand('copy'); alert('Copiado para a área de transferência!')">
-        </div>
-    </div>
-
-    <script>
-        let produtosBD = [
-            { "estabelecimento": "Supermercado BH", "produto": "Café 500g", "preco": 18.90, "data": "2026-09-24" },
-            { "estabelecimento": "Supermercado Avenida", "produto": "Café 500g", "preco": 17.50, "data": "2026-09-10" },
-            { "estabelecimento": "Supermercado Super Top", "produto": "Leite Integral 1L", "preco": 5.49, "data": "2026-09-25" },
-            { "estabelecimento": "Supermercado JS", "produto": "Leite Desnatado 1L", "preco": 5.49, "data": "2026-09-25" };
-
 
           </body>
           </html>
