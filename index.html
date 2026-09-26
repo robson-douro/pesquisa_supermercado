@@ -330,6 +330,174 @@
                 <button type="submit" class="btn-admin">Gerar Registro</button>
             </div>
         </form>
+        <!-- CÓDIGO DE CORREÇÃO DO COMPARADOR (COLE ANTES DE </body >) -->
+<script>
+let dadosPrecos = [];
+
+// 1. Carrega os dados do arquivo dados.json automaticamente
+document.addEventListener("DOMContentLoaded", async () => {
+    try {
+        const response = await fetch('dados.json');
+        dadosPrecos = await response.json();
+        
+        preencherListasSuspensus();
+        ativarBotoesEEnter();
+    } catch (error) {
+        console.error("Erro ao ler o arquivo dados.json:", error);
+    }
+});
+
+// 2. Cria as opções automáticas para clicar e selecionar nos campos
+function preencherListasSuspensus() {
+    const mercados = [...new Set(dadosPrecos.map(item => item.estabelecimento))].sort();
+    const produtos = [...new Set(dadosPrecos.map(item => item.produto))].sort();
+
+    criarDatalistHtml("lista-mercados", mercados);
+    criarDatalistHtml("lista-produtos", produtos);
+
+    // Procura todos os inputs da página
+    const inputs = document.querySelectorAll("input");
+    
+    // Vincula as listas de sugestão aos campos com base na ordem que aparecem na tela
+    if (inputs.length >= 4) {
+        inputs[0].setAttribute("list", "lista-mercados"); // Opção A - Estabelecimento
+        inputs[1].setAttribute("list", "lista-produtos"); // Opção A - Produto
+        inputs[2].setAttribute("list", "lista-mercados"); // Opção B - Estabelecimento
+        inputs[3].setAttribute("list", "lista-produtos"); // Opção B - Produto
+    } else {
+        // Caso seu HTML tenha uma estrutura diferente, tenta adivinhar pelo texto próximo
+        inputs.forEach(input => {
+            const textoAnterior = input.previousElementSibling?.textContent.toLowerCase() || "";
+            if (textoAnterior.includes("estabelecimento")) input.setAttribute("list", "lista-mercados");
+            if (textoAnterior.includes("produto")) input.setAttribute("list", "lista-produtos");
+        });
+    }
+}
+
+function criarDatalistHtml(id, itens) {
+    let datalist = document.getElementById(id);
+    if (!datalist) {
+        datalist = document.createElement("datalist");
+        datalist.id = id;
+        document.body.appendChild(datalist);
+    }
+    datalist.innerHTML = itens.map(item => `<option value="${item}"></option>`).join("");
+}
+
+// 3. Faz o botão Buscar e a tecla Enter funcionarem
+function ativarBotoesEEnter() {
+    // Procura por botões que tenham o texto "Buscar"
+    const botoes = Array.from(document.querySelectorAll("button, a, div")).filter(el => 
+        el.textContent.trim().toLowerCase() === "buscar"
+    );
+
+    botoes.forEach((botao, index) => {
+        botao.style.cursor = "pointer"; // Garante que mostre a mãozinha do mouse
+        botao.addEventListener("click", (e) => {
+            e.preventDefault();
+            dispararPesquisa(index === 0 ? 'A' : 'B');
+        });
+    });
+
+    // Ativa o Enter nos campos de texto
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach((input, index) => {
+        input.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                dispararPesquisa(index < 2 ? 'A' : 'B');
+            }
+        });
+    });
+}
+
+// 4. Executa o filtro de busca
+function dispararPesquisa(bloco) {
+    const inputs = document.querySelectorAll("input");
+    let mercadoProcurado = "";
+    let produtoProcurado = "";
+
+    if (inputs.length >= 4) {
+        mercadoProcurado = bloco === 'A' ? inputs[0].value.trim() : inputs[2].value.trim();
+        produtoProcurado = bloco === 'A' ? inputs[1].value.trim() : inputs[3].value.trim();
+    } else {
+        return; // Evita quebrar se o HTML estiver muito diferente
+    }
+
+    // Filtra no banco de dados JSON
+    const resultados = dadosPrecos.filter(item => {
+        const bateMercado = mercadoProcurado === "" || item.estabelecimento.toLowerCase().includes(mercadoProcurado.toLowerCase());
+        const bateProduto = produtoProcurado === "" || item.produto.toLowerCase().includes(produtoProcurado.toLowerCase());
+        return bateMercado && bateProduto;
+    });
+
+    renderizarResultadosNaTela(bloco, resultados);
+}
+
+// 5. Mostra os preços formatados na tela logo abaixo do respectivo bloco
+function renderizarResultadosNaTela(bloco, lista) {
+    // Encontra os blocos visuais de pesquisa baseados nos botões Buscar
+    const botoes = Array.from(document.querySelectorAll("button, a, div")).filter(el => 
+        el.textContent.trim().toLowerCase() === "buscar"
+    );
+    
+    const botaoAlvo = bloco === 'A' ? botoes[0] : botoes[1];
+    if (!botaoAlvo) return;
+
+    // Remove o resultado da busca anterior para não acumular na tela
+    const containerPai = botaoAlvo.parentElement;
+    const resultadoAntigo = containerPai.querySelector(".caixa-resultado-busca");
+    if (resultadoAntigo) resultadoAntigo.remove();
+
+    // Monta a caixinha de resultados nova
+    const caixaResultado = document.createElement("div");
+    caixaResultado.className = "caixa-resultado-busca";
+    caixaResultado.style.marginTop = "15px";
+    caixaResultado.style.padding = "15px";
+    caixaResultado.style.backgroundColor = "#ffffff";
+    caixaResultado.style.borderRadius = "6px";
+    caixaResultado.style.boxShadow = "0 2px 5px rgba(0,0,0,0.05)";
+    caixaResultado.style.border = "1px solid #e1e4e8";
+
+    if (lista.length === 0) {
+        caixaResultado.innerHTML = `<p style="color: #586069; margin: 0; font-size: 14px;">❌ Nenhum preço encontrado para essa busca.</p>`;
+    } else {
+        let tabela = `
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 14px;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #e1e4e8; color: #586069; text-align: left;">
+                        <th style="padding-bottom: 6px;">Supermercado / Produto</th>
+                        <th style="text-align: right; padding-bottom: 6px;">Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        lista.forEach(item => {
+            // Formata a data de AAAA-MM-DD para DD/MM/AAAA
+            const dataFormatada = item.data.split('-').reverse().join('/');
+            
+            tabela += `
+                <tr style="border-bottom: 1px solid #f1f1f3;">
+                    <td style="padding: 10px 0;">
+                        <span style="font-weight: bold; color: #24292e;">${item.estabelecimento}</span><br>
+                        <span style="font-size: 12px; color: #586069;">${item.produto} (Coleta: ${dataFormatada})</span>
+                    </td>
+                    <td style="text-align: right; font-weight: bold; color: #2ea44f; white-space: nowrap;">
+                        R$ ${item.preco.toFixed(2).replace('.', ',')}
+                    </td>
+                </tr>
+            `;
+        });
+
+        tabela += `</tbody></table>`;
+        caixaResultado.innerHTML = tabela;
+    }
+
+    // Insere os resultados logo abaixo do botão "Buscar" clicado
+    containerPai.appendChild(caixaResultado);
+}
+</script>
 
           </body>
           </html>
