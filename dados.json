@@ -1,17 +1,5 @@
 [
   {
-    "estabelecimento": "Supermercado Central",
-    "produto": "Café 500g",
-    "preco": 18.9,
-    "data": "2026-09-24"
-  },
-  {
-    "estabelecimento": "Mercado do Bairro",
-    "produto": "Café 500g",
-    "preco": 17.5,
-    "data": "2026-09-10"
-  },
-  {
     "estabelecimento": "Supermercado BH",
     "produto": "Café 3 Corações 250g",
     "preco": 14.98,
