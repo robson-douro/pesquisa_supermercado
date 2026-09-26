@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Preços</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --accent: #4a90e2;
+            --accent-hover: #357abd;
+            --border-color: #e9ecef;
+            --alert-bg: #fff5f5;
+            --alert-text: #e53e3e;
+            --alert-border: #fed7d7;
+            --price-color: #2f855a;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 30px 15px;
+            line-height: 1.5;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        /* Ocupa 100% da largura da tela */
+        .comparison-container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Cada coluna ganha peso igual e cresce até o limite total */
+        .search-column {
+            flex: 1;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .search-column h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+
+        .search-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            transition: all 0.2s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background-color: var(--card-bg);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        .results {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .product-card {
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 8px;
+            background-color: var(--card-bg);
+            position: relative;
+        }
+
+        .product-card .store-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .product-card .product-name {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .product-card .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 8px;
+        }
+
+        .product-card .price {
+            font-size: 20px;
+            color: var(--price-color);
+            font-weight: 700;
+        }
+
+        .product-card .date {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .alert-outdated {
+            margin-top: 10px;
+            color: var(--alert-text);
+            background-color: var(--alert-bg);
+            border: 1px solid var(--alert-border);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Seção de Cadastro também expandida para 100% */
+        .admin-section {
+            width: 100%;
+            margin-top: 30px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .admin-section h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .admin-section p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            align-items: flex-end;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            height: 46px;
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .output-box {
+            margin-top: 20px;
+        }
+
+        .output-box input {
+            background-color: var(--bg-color);
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        /* Responsividade para telas mobile continuarem utilizáveis */
+        @media (max-width: 768px) {
+            .comparison-container {
+                flex-direction: column;
+            }
+            body {
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Comparador de Preços</h1>
+        <p>Pesquise e compare valores em tempo real</p>
+    </div>
+    
+    <div class="comparison-container">
+        <!-- Opção A -->
+        <div class="search-column">
+            <h2>Pesquisa Opção A</h2>
+            <div class="search-inputs">
+                <div class="form-group">
+                    <label for="estabA">Estabelecimento</label>
+                    <input type="text" id="estabA" placeholder="Ex: Supermercado Central" oninput="buscarA()">
+                </div>
+                <div class="form-group">
+                    <label for="prodA">Produto</label>
+                    <input type="text" id="prodA" placeholder="Ex: Café 500g" oninput="buscarA()">
+                </div>
+            </div>
+            <div class="results" id="resultadosA"></div>
+        </div>
+
+        <!-- Opção B -->
+        <div class="search-column">
+            <h2>Pesquisa Opção B</h2>
+            <div class="search-inputs">
+                <div class="form-group">
+                    <label for="estabB">Estabelecimento</label>
+                    <input type="text" id="estabB" placeholder="Ex: Mercado do Bairro" oninput="buscarB()">
+                </div>
+                <div class="form-group">
+                    <label for="prodB">Produto</label>
+                    <input type="text" id="prodB" placeholder="Ex: Café 500g" oninput="buscarB()">
+                </div>
+            </div>
+            <div class="results" id="resultadosB"></div>
+        </div>
+    </div>
+
+    <!-- Área de Cadastro -->
+    <div class="admin-section">
+        <h2>Adicionar Novo Preço</h2>
+        <p>Preencha os campos para gerar a estrutura de dados e atualizar o seu repositório.</p>
+        
+        <form id="cadastroForm" onsubmit="gerarJSON(event)">
+            <div class="admin-grid">
+                <div class="form-group">
+                    <label>Estabelecimento</label>
+                    <input type="text" id="cadEstab" required placeholder="Nome do local">
+                </div>
+                <div class="form-group">
+                    <label>Produto</label>
+                    <input type="text" id="cadProd" required placeholder="Nome do produto">
+                </div>
+                <div class="form-group">
+                    <label>Preço (R$)</label>
+                    <input type="number" step="0.01" id="cadPreco" required placeholder="0,00">
+                </div>
+                <div class="form-group">
+                    <label>Data da Coleta</label>
+                    <input type="date" id="cadData" required>
+                </div>
+                <button type="submit">Gerar Registro</button>
+            </div>
+        </form>
+
+        <div class="form-group output-box">
+            <label>Clique para copiar e colar no seu arquivo <code>dados.json</code>:</label>
+            <input type="text" id="resultadoJson" readonly placeholder='{"estabelecimento": "..."}' onclick="this.select(); document.execCommand('copy'); alert('Copiado para a área de transferência!')">
+        </div>
+    </div>
+
+    <script>
+        // Banco de dados demonstrativo baseado no dia de hoje (26/09/2026)
+        let produtosBD = [
+            { "estabelecimento": "Supermercado Central", "produto": "Café 500g", "preco": 18.90, "data": "2026-09-24" },
+            { "estabelecimento": "Mercado do Bairro", "produto": "Café 500g", "preco": 17.50, "data": "2026-09-10" },
+            { "estabelecimento": "Supermercado Central", "produto": "Leite Integral 1L", "preco": 5.49, "data": "2026-09-25" },
+            { "estabelecimento": "Mercado do Bairro", "produto": "Leite Integral 1L", "preco": 5.99, "data": "2026-09-02" }
+
+          </body>
+          </html>
