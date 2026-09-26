@@ -237,13 +237,12 @@
 </head>
 <body>
 
-    <!-- Listas de Opções Dinâmicas -->
     <datalist id="listaEstabelecimentos"></datalist>
     <datalist id="listaProdutos"></datalist>
 
     <div class="header">
         <h1>Comparador de Preços</h1>
-        <p>Pesquise e compare valores em tempo real</p>
+        <p>Pesquise e pressione Enter para comparar valores em tempo real</p>
     </div>
     
     <div class="comparison-container">
@@ -253,11 +252,11 @@
             <div class="search-inputs">
                 <div class="form-group">
                     <label for="estabA">Estabelecimento</label>
-                    <input type="text" id="estabA" list="listaEstabelecimentos" placeholder="Selecione ou digite..." oninput="buscarA()">
+                    <input type="text" id="estabA" list="listaEstabelecimentos" placeholder="Digite e aperte Enter..." onkeydown="checarEnter(event, 'A')" change="buscarA()">
                 </div>
                 <div class="form-group">
                     <label for="prodA">Produto</label>
-                    <input type="text" id="prodA" list="listaProdutos" placeholder="Selecione ou digite..." oninput="buscarA()">
+                    <input type="text" id="prodA" list="listaProdutos" placeholder="Digite e aperte Enter..." onkeydown="checarEnter(event, 'A')" change="buscarA()">
                 </div>
             </div>
             <div class="results" id="resultadosA"></div>
@@ -269,11 +268,11 @@
             <div class="search-inputs">
                 <div class="form-group">
                     <label for="estabB">Estabelecimento</label>
-                    <input type="text" id="estabB" list="listaEstabelecimentos" placeholder="Selecione ou digite..." oninput="buscarB()">
+                    <input type="text" id="estabB" list="listaEstabelecimentos" placeholder="Digite e aperte Enter..." onkeydown="checarEnter(event, 'B')" change="buscarB()">
                 </div>
                 <div class="form-group">
                     <label for="prodB">Produto</label>
-                    <input type="text" id="prodB" list="listaProdutos" placeholder="Selecione ou digite..." oninput="buscarB()">
+                    <input type="text" id="prodB" list="listaProdutos" placeholder="Digite e aperte Enter..." onkeydown="checarEnter(event, 'B')" change="buscarB()">
                 </div>
             </div>
             <div class="results" id="resultadosB"></div>
@@ -314,12 +313,12 @@
     </div>
 
     <script>
-        // Banco de dados inicial demonstrativo
         let produtosBD = [
             { "estabelecimento": "Supermercado BH", "produto": "Café 500g", "preco": 18.90, "data": "2026-09-24" },
-            { "estabelecimento": "Supermercado JS", "produto": "Café 500g", "preco": 17.50, "data": "2026-09-10" },
-            { "estabelecimento": "Supermercado Avenida", "produto": "Leite Integral 1L", "preco": 5.49, "data": "2026-09-25" },
-            { "estabelecimento": "Supermercado Super Top", "produto": "Leite Integral 1L", "preco": 5.49, "data": "2026-09-25" };
+            { "estabelecimento": "Supermercado Avenida", "produto": "Café 500g", "preco": 17.50, "data": "2026-09-10" },
+            { "estabelecimento": "Supermercado Super Top", "produto": "Leite Integral 1L", "preco": 5.49, "data": "2026-09-25" },
+            { "estabelecimento": "Supermercado JS", "produto": "Leite Desnatado 1L", "preco": 5.49, "data": "2026-09-25" };
+
 
           </body>
           </html>
