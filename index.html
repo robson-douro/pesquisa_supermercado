@@ -51,7 +51,6 @@
             margin-top: 5px;
         }
 
-        /* Ocupa 100% da largura da tela */
         .comparison-container {
             display: flex;
             gap: 20px;
@@ -59,7 +58,6 @@
             margin: 0 auto;
         }
 
-        /* Cada coluna ganha peso igual e cresce até o limite total */
         .search-column {
             flex: 1;
             background: var(--card-bg);
@@ -171,7 +169,6 @@
             font-weight: 500;
         }
 
-        /* Seção de Cadastro também expandida para 100% */
         .admin-section {
             width: 100%;
             margin-top: 30px;
@@ -228,7 +225,6 @@
             font-size: 13px;
         }
 
-        /* Responsividade para telas mobile continuarem utilizáveis */
         @media (max-width: 768px) {
             .comparison-container {
                 flex-direction: column;
@@ -240,6 +236,10 @@
     </style>
 </head>
 <body>
+
+    <!-- Listas de Opções Dinâmicas (Alimentadas via Javascript) -->
+    <datalist id="listaEstabelecimentos"></datalist>
+    <datalist id="listaProdutos"></datalist>
 
     <div class="header">
         <h1>Comparador de Preços</h1>
@@ -253,11 +253,11 @@
             <div class="search-inputs">
                 <div class="form-group">
                     <label for="estabA">Estabelecimento</label>
-                    <input type="text" id="estabA" placeholder="Ex: Supermercado Central" oninput="buscarA()">
+                    <input type="text" id="estabA" list="listaEstabelecimentos" placeholder="Selecione ou digite..." oninput="buscarA()">
                 </div>
                 <div class="form-group">
                     <label for="prodA">Produto</label>
-                    <input type="text" id="prodA" placeholder="Ex: Café 500g" oninput="buscarA()">
+                    <input type="text" id="prodA" list="listaProdutos" placeholder="Selecione ou digite..." oninput="buscarA()">
                 </div>
             </div>
             <div class="results" id="resultadosA"></div>
@@ -269,11 +269,11 @@
             <div class="search-inputs">
                 <div class="form-group">
                     <label for="estabB">Estabelecimento</label>
-                    <input type="text" id="estabB" placeholder="Ex: Mercado do Bairro" oninput="buscarB()">
+                    <input type="text" id="estabB" list="listaEstabelecimentos" placeholder="Selecione ou digite..." oninput="buscarB()">
                 </div>
                 <div class="form-group">
                     <label for="prodB">Produto</label>
-                    <input type="text" id="prodB" placeholder="Ex: Café 500g" oninput="buscarB()">
+                    <input type="text" id="prodB" list="listaProdutos" placeholder="Selecione ou digite..." oninput="buscarB()">
                 </div>
             </div>
             <div class="results" id="resultadosB"></div>
@@ -289,11 +289,11 @@
             <div class="admin-grid">
                 <div class="form-group">
                     <label>Estabelecimento</label>
-                    <input type="text" id="cadEstab" required placeholder="Nome do local">
+                    <input type="text" id="cadEstab" list="listaEstabelecimentos" required placeholder="Nome do local">
                 </div>
                 <div class="form-group">
                     <label>Produto</label>
-                    <input type="text" id="cadProd" required placeholder="Nome do produto">
+                    <input type="text" id="cadProd" list="listaProdutos" required placeholder="Nome do produto">
                 </div>
                 <div class="form-group">
                     <label>Preço (R$)</label>
@@ -314,12 +314,11 @@
     </div>
 
     <script>
-        // Banco de dados demonstrativo baseado no dia de hoje (26/09/2026)
+        // Banco de dados inicial demonstrativo
         let produtosBD = [
             { "estabelecimento": "Supermercado Central", "produto": "Café 500g", "preco": 18.90, "data": "2026-09-24" },
             { "estabelecimento": "Mercado do Bairro", "produto": "Café 500g", "preco": 17.50, "data": "2026-09-10" },
             { "estabelecimento": "Supermercado Central", "produto": "Leite Integral 1L", "preco": 5.49, "data": "2026-09-25" },
-            { "estabelecimento": "Mercado do Bairro", "produto": "Leite Integral 1L", "preco": 5.99, "data": "2026-09-02" }
 
           </body>
           </html>
