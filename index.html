@@ -228,7 +228,6 @@
 <script>
 // Variável global que armazenará os dados após a requisição do arquivo JSON
 let dadosProdutos = [];
-
 let listaA = [];
 let listaB = [];
 
@@ -273,30 +272,28 @@ function atualizarProdutosDisponiveis(painel) {
     const selectProduto = document.getElementById(`produto-${sufixo}`);
     const blocoContato = document.getElementById(`contato-${sufixo}`);
     
-    // Limpa a seleção anterior de produtos
     selectProduto.innerHTML = '<option value="">Selecione um produto...</option>';
     
-    // Se o usuário desmarcar o estabelecimento, esconde o bloco de contato
     if (!estSelecionado) {
-        blocoContato.style.display = "none";
-        blocoContato.innerHTML = "";
+        if (blocoContato) {
+            blocoContato.style.display = "none";
+            blocoContato.innerHTML = "";
+        }
         return;
     }
     
-    // Filtra os produtos da loja selecionada
     const produtosFiltrados = dadosProdutos.filter(item => item.estabelecimento === estSelecionado);
     
-    // Pega o endereço e telefone do primeiro produto encontrado e exibe no bloco único
-    if (produtosFiltrados.length > 0) {
+    // Exibe o endereço e o telefone apenas uma vez abaixo do botão
+    if (produtosFiltrados.length > 0 && blocoContato) {
         const infoLoja = produtosFiltrados[0];
         blocoContato.innerHTML = `
             <strong>📍 Endereço:</strong> ${infoLoja.endereco}<br>
             <strong>📞 Contato:</strong> ${infoLoja.telefone}
         `;
-        blocoContato.style.display = "block"; // Torna o bloco visível
+        blocoContato.style.display = "block";
     }
 
-    // Alimenta o select com os produtos filtrados
     produtosFiltrados.forEach(item => {
         const opt = document.createElement('option');
         opt.value = item.produto;
@@ -342,31 +339,11 @@ function atualizarTabela(painel, lista) {
     lista.forEach((item, index) => {
         totalGeral += item.preco;
         const tr = document.createElement('tr');
-        
+        // Tabela limpa: Apenas produto e preço
         tr.innerHTML = `
             <td>${item.produto}</td>
             <td>R$ ${item.preco.toFixed(2).replace('.', ',')}</td>
             <td><button class="btn-remover" onclick="removerItem('${painel}', ${index})">❌</button></td>
-        `;
-        tbody.appendChild(tr);
-    });
-    totalElemento.textContent = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
-}
-    
-    let totalGeral = 0;
-    lista.forEach((item, index) => {
-        totalGeral += item.preco;
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td>
-                <strong>${item.produto}</strong>
-                <div style="font-size: 0.8em; color: #666; margin-top: 4px; line-height: 1.2;">
-                    📍 ${item.endereco}<br>
-                    📞 ${item.telefone}
-                </div>
-            </td>
-            <td style="vertical-align: top;">R$ ${item.preco.toFixed(2).replace('.', ',')}</td>
-            <td style="vertical-align: top;"><button class="btn-remover" onclick="removerItem('${painel}', ${index})">❌</button></td>
         `;
         tbody.appendChild(tr);
     });
@@ -387,6 +364,13 @@ function limparLista(painel) {
     const sufixo = painel.toLowerCase();
     document.getElementById(`estabelecimento-${sufixo}`).value = "";
     document.getElementById(`produto-${sufixo}`).innerHTML = '<option value="">Selecione um produto...</option>';
+    
+    const blocoContato = document.getElementById(`contato-${sufixo}`);
+    if (blocoContato) {
+        blocoContato.style.display = "none";
+        blocoContato.innerHTML = "";
+    }
+
     if (painel === 'A') {
         listaA = []; 
         atualizarTabela('A', listaA);
