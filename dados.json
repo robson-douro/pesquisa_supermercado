@@ -122,7 +122,7 @@
   {
     "estabelecimento": "Supermercado JS",
     "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99845-7511, (27) 3288-1198",
+    "telefone": ["(27) 99845-7511, (27) 3288-1198"],
     "produto": "Café 3 Corações 250g",
     "preco": 15.98,
     "data": "2026-09-26"
@@ -130,7 +130,7 @@
   {
     "estabelecimento": "Supermercado JS",
     "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99845-7511, (27) 3288-1198",
+    "telefone": ["(27) 99845-7511, (27) 3288-1198"],
     "produto": "Café Cafuso 250g",
     "preco": 13.98,
     "data": "2026-09-26"
@@ -138,7 +138,7 @@
   {
     "estabelecimento": "Supermercado JS",
     "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99845-7511, (27) 3288-1198",
+    "telefone": ["(27) 99845-7511, (27) 3288-1198"],
     "produto": "Café Meridional 250g",
     "preco": 13.79,
     "data": "2026-09-26"
@@ -146,7 +146,7 @@
   {
     "estabelecimento": "Supermercado JS",
     "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99845-7511, (27) 3288-1198",
+    "telefone": ["(27) 99845-7511, (27) 3288-1198"],
     "produto": "Arroz Saboroso 5kg",
     "preco": 17.98,
     "data": "2026-09-26"
@@ -154,7 +154,7 @@
   {
     "estabelecimento": "Supermercado JS",
     "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99845-7511, (27) 3288-1198",
+    "telefone": ["(27) 99845-7511, (27) 3288-1198"],
     "produto": "Arroz Sepé 5kg",
     "preco": 21.9,
     "data": "2026-09-26"
