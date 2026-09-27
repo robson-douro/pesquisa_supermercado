@@ -154,6 +154,7 @@
             </div>
             
             <button class="btn btn-a" onclick="adicionarItem('A')">＋ Adicionar à Lista A</button>
+            <div id="contato-a" class="info-contato"></div>
 
             <h3>Produtos na Lista A</h3>
             <table class="tabela-resultados" id="tabela-a">
@@ -197,6 +198,7 @@
             </div>
             
             <button class="btn btn-b" onclick="adicionarItem('B')">＋ Adicionar à Lista B</button>
+            <div id="contato-b" class="info-contato"></div>
 
             <h3>Produtos na Lista B</h3>
             <table class="tabela-resultados" id="tabela-b">
@@ -269,12 +271,32 @@ function atualizarProdutosDisponiveis(painel) {
     const sufixo = painel.toLowerCase();
     const estSelecionado = document.getElementById(`estabelecimento-${sufixo}`).value;
     const selectProduto = document.getElementById(`produto-${sufixo}`);
+    const blocoContato = document.getElementById(`contato-${sufixo}`);
     
+    // Limpa a seleção anterior de produtos
     selectProduto.innerHTML = '<option value="">Selecione um produto...</option>';
-    if (!estSelecionado) return;
     
+    // Se o usuário desmarcar o estabelecimento, esconde o bloco de contato
+    if (!estSelecionado) {
+        blocoContato.style.display = "none";
+        blocoContato.innerHTML = "";
+        return;
+    }
+    
+    // Filtra os produtos da loja selecionada
     const produtosFiltrados = dadosProdutos.filter(item => item.estabelecimento === estSelecionado);
     
+    // Pega o endereço e telefone do primeiro produto encontrado e exibe no bloco único
+    if (produtosFiltrados.length > 0) {
+        const infoLoja = produtosFiltrados[0];
+        blocoContato.innerHTML = `
+            <strong>📍 Endereço:</strong> ${infoLoja.endereco}<br>
+            <strong>📞 Contato:</strong> ${infoLoja.telefone}
+        `;
+        blocoContato.style.display = "block"; // Torna o bloco visível
+    }
+
+    // Alimenta o select com os produtos filtrados
     produtosFiltrados.forEach(item => {
         const opt = document.createElement('option');
         opt.value = item.produto;
