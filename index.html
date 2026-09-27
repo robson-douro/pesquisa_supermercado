@@ -241,17 +241,26 @@ document.addEventListener("DOMContentLoaded", () => {
  * Faz a requisição para buscar o arquivo dados.json tratando caminhos do GitHub Pages
  */
 function carregarDadosJson() {
-    // Tenta primeiro o caminho relativo padrão
-    fetch('dados.json')
+    // Constrói a URL exata apontando para o arquivo na mesma pasta do site
+    const urlDados = window.location.origin + window.location.pathname.replace('index.html', '') + 'dados.json';
+    
+    fetch(urlDados)
         .then(response => {
             if (!response.ok) {
-                // Se der erro 404, tenta buscar considerando a subpasta do repositório no GitHub Pages
-                const pathArray = window.location.pathname.split('/');
-                const repoName = pathArray[1]; // Pega o nome do repositório
-                return fetch(`/${repoName}/dados.json`);
+                throw new Error("Erro " + response.status + " ao ler o arquivo dados.json");
             }
-            return response;
+            return response.json();
         })
+        .then(data => {
+            dadosProdutos = data;
+            popularSelectEstabelecimentos();
+        })
+        .catch(error => {
+            console.error("Erro ao carregar o arquivo JSON:", error);
+            alert("Não foi possível carregar os dados de preços. Verifique se o arquivo dados.json está na mesma pasta do index.html no seu GitHub.");
+        });
+}
+
         .then(response => {
             if (!response.ok) {
                 throw new Error("Arquivo dados.json não encontrado nas rotas testadas.");
