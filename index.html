@@ -206,7 +206,7 @@
 <div class="container">
     <div class="header">
         <h1>Comparador de Preços</h1>
-        <p>Preencha os campos e clique em Buscar ou aperte Enter</p>
+        <p>Preencha os campos e utilize o botão Buscar ou a tecla Enter</p>
     </div>
 
     <div class="search-columns">
@@ -284,7 +284,7 @@
                 return response.json();
             })
             .then(dados => {
-                // Filtra os dados buscando por correspondências aproximadas (includes)
+                // Filtra os dados buscando por correspondências aproximadas
                 const resultado = dados.find(item => 
                     item.estabelecimento.toLowerCase().includes(lojaBuscada) && 
                     item.produto.toLowerCase().includes(produtoBuscado)
@@ -293,17 +293,7 @@
                 if (resultado) {
                     const endereco = resultado.endereco ? resultado.endereco : "Endereço não cadastrado";
                     const telefone = resultado.telefone ? resultado.telefone : "Telefone não cadastrado";
-                    
-                    // Tratamento seguro da data para evitar travamentos
-                    let dataFormatada = "Data não informada";
-                    if (resultado.data) {
-                        const partes = resultado.data.split('-');
-                        if (partes.length === 3) {
-                            dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
-                        } else {
-                            dataFormatada = resultado.data;
-                        }
-                    }
+                    const dataColeta = resultado.data ? resultado.data : "Não informada";
 
                     containerResultado.innerHTML = `
                         <div class="card-result">
@@ -313,9 +303,19 @@
                             </div>
                             <div class="product-detail">
                                 ${resultado.produto}<br>
-                                <span style="font-size: 11px;">(Coleta: ${dataFormatada})</span>
+                                <span style="font-size: 11px;">(Coleta: ${dataColeta})</span>
                             </div>
                             <div class="contact-info">
+                                <div class="contact-item">
+                                    <span>📍</span> ${endereco}
+                                </div>
+                                <div class="contact-item">
+                                    <span>📞</span> ${telefone}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
 
 
 </body>
