@@ -179,6 +179,7 @@
     </div>
 
     <div class="search-columns">
+        <!-- PESQUISA OPÇÃO A -->
         <div class="column">
             <h2>Pesquisa Opção A</h2>
             <div class="form-group">
@@ -187,7 +188,7 @@
             </div>
             <div class="form-group">
                 <label>Produto</label>
-                <input type="text" id="produtoA" value="Arroz Saboroso 5kg">
+                <input type="text" id="produtoA" value="Arroz Sepé 5kg">
             </div>
             <button class="btn-buscar" onclick="buscarOpcao('A')">Buscar</button>
 
@@ -202,6 +203,7 @@
             </div>
         </div>
 
+        <!-- PESQUISA OPÇÃO B -->
         <div class="column">
             <h2>Pesquisa Opção B</h2>
             <div class="form-group">
@@ -228,6 +230,16 @@
 </div>
 
 <script>
+    // Monitora a digitação nos inputs e ativa a busca se pressionar Enter
+    document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const coluna = this.id.endsWith('A') ? 'A' : 'B';
+                buscarOpcao(coluna);
+            }
+        });
+    });
+
     function buscarOpcao(opcao) {
         const lojaBuscada = document.getElementById(`loja${opcao}`).value.trim().toLowerCase();
         const produtoBuscado = document.getElementById(`produto${opcao}`).value.trim().toLowerCase();
