@@ -5,314 +5,308 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparador de Preços</title>
     <style>
-        :root {
-            --primary-color: #4285f4;
-            --background-color: #f8f9fa;
-            --card-background: #ffffff;
-            --text-color: #333333;
-            --muted-text: #666666;
-            --border-color: #e0e0e0;
-            --price-color: #2e7d32;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
         body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
         }
         .container {
-            width: 100%;
-            max-width: 800px;
-            background: var(--card-background);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .header {
+        h1 {
             text-align: center;
+            color: #1e3d59;
             margin-bottom: 30px;
         }
-        .header h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #1a1f2c;
-        }
-        .header p {
-            color: var(--muted-text);
-            font-size: 14px;
-        }
-        .search-columns {
+        .comparador-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 20px;
         }
-        @media (max-width: 600px) {
-            .search-columns {
+        @media (max-width: 768px) {
+            .comparador-grid {
                 grid-template-columns: 1fr;
             }
         }
-        .column {
-            border: 1px solid var(--border-color);
+        .painel-pesquisa {
+            background: #fff;
             border-radius: 8px;
             padding: 20px;
-            background: #fafafa;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid #17a2b8;
         }
-        .column h2 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
+        .painel-pesquisa.opcao-b {
+            border-top-color: #007bff;
         }
-        .form-group {
+        .painel-pesquisa h2 {
+            margin-top: 0;
+            color: #1e3d59;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+        .campo-grupo {
             margin-bottom: 15px;
         }
-        .form-group label {
+        .campo-grupo label {
             display: block;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: var(--muted-text);
             margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 0.9em;
         }
-        .form-group select {
+        .campo-grupo select {
             width: 100%;
             padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 14px;
-            background-color: #ffffff;
-            color: var(--text-color);
-            outline: none;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            background-color: #fff;
+            font-size: 1em;
         }
-        .form-group select:focus {
-            border-color: var(--primary-color);
-        }
-        .btn-buscar {
+        .btn {
             width: 100%;
             padding: 12px;
-            background-color: var(--primary-color);
-            color: white;
             border: none;
-            border-radius: 6px;
-            font-size: 16px;
+            border-radius: 4px;
+            font-size: 1em;
             font-weight: bold;
             cursor: pointer;
             transition: background 0.2s;
+            margin-bottom: 20px;
+        }
+        .btn-a { background: #17a2b8; color: white; }
+        .btn-a:hover { background: #138496; }
+        .btn-b { background: #007bff; color: white; }
+        .btn-b:hover { background: #0069d9; }
+        .btn-limpar {
+            background: #6c757d;
+            color: white;
+            padding: 6px 12px;
+            font-size: 0.85em;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
             margin-top: 10px;
         }
-        .btn-buscar:hover {
-            background-color: #357ae8;
+        .btn-limpar:hover { background: #5a6268; }
+        
+        .tabela-resultados {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
         }
-        .result-box {
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px dashed var(--border-color);
-            min-height: 120px;
+        .tabela-resultados th, .tabela-resultados td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 0.95em;
         }
-        .result-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            font-size: 13px;
-            color: var(--muted-text);
-            margin-bottom: 10px;
-            font-weight: 600;
+        .tabela-resultados th {
+            background-color: #f8f9fa;
+            color: #495057;
         }
-        .card-result {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        .btn-remover {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            font-weight: bold;
         }
-        .card-main-info {
+        .container-total {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 4px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 6px;
         }
-        .market-name {
+        .valor-total {
+            font-size: 1.3em;
             font-weight: bold;
-            font-size: 15px;
-        }
-        .price-tag {
-            color: var(--price-color);
-            font-weight: bold;
-            font-size: 16px;
-        }
-        .product-detail {
-            font-size: 13px;
-            color: var(--muted-text);
-            margin-bottom: 8px;
-        }
-        .contact-info {
-            font-size: 12px;
-            color: #555555;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 6px;
-            margin-top: 6px;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-top: 3px;
-        }
-        .contact-item span {
-            margin-right: 6px;
-        }
-        .no-result {
-            color: #999;
-            font-style: italic;
-            font-size: 14px;
-            text-align: center;
-            margin-top: 30px;
+            color: #28a745;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
-        <h1>Comparador de Preços</h1>
-        <p>Preencha os campos e utilize o botão Buscar ou a tecla Enter</p>
-    </div>
+    <h1>🛒 Comparador de Preços</h1>
 
-    <div class="search-columns">
-        <!-- PESQUISA OPÇÃO A -->
-        <div class="column">
+    <div class="comparador-grid">
+        <!-- COLUNA OPÇÃO A -->
+        <div class="painel-pesquisa">
             <h2>Pesquisa Opção A</h2>
-            <div class="form-group">
-                <label>Estabelecimento</label>
-                <select id="lojaA">
-                    <option value="Supermercado Avenida" selected>Supermercado Avenida</option>
-                    <option value="Supermercado BH">Supermercado BH</option>
-                    <option value="Supermercado JS">Supermercado JS</option>
-                    <option value="Supermercado Super Top">Supermercado Super Top</option>
+            
+            <div class="campo-grupo">
+                <label for="estabelecimento-a">Estabelecimento</label>
+                <select id="estabelecimento-a" onchange="atualizarProdutosDisponiveis('A')">
+                    <option value="">Selecione um estabelecimento...</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label>Produto</label>
-                <select id="produtoA">
-                    <option value="Arroz Saboroso 5kg">Arroz Saboroso 5kg</option>
-                    <option value="Arroz Sepé 5kg" selected>Arroz Sepé 5kg</option>
-                    <option value="Café 3 Corações 250g">Café 3 Corações 250g</option>
-                    <option value="Café Cafuso 250g">Café Cafuso 250g</option>
-                    <option value="Café Meridional 250g">Café Meridional 250g</option>
+            
+            <div class="campo-grupo">
+                <label for="produto-a">Produto</label>
+                <select id="produto-a">
+                    <option value="">Selecione um produto...</option>
                 </select>
             </div>
-            <button class="btn-buscar" onclick="buscarOpcao('A')">Buscar</button>
+            
+            <button class="btn btn-a" onclick="adicionarItem('A')">＋ Adicionar à Lista A</button>
 
-            <div class="result-box">
-                <div class="result-header">
-                    <div>Supermercado / Item</div>
-                    <div>Preço</div>
-                </div>
-                <div id="resultadoA">
-                    <p class="no-result">Nenhuma busca realizada</p>
-                </div>
+            <h3>Produtos na Lista A</h3>
+            <table class="tabela-resultados" id="tabela-a">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-itens-a">
+                    <tr>
+                        <td colspan="3" style="color: #666; text-align: center;">Nenhum produto adicionado.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="container-total">
+                <span>TOTAL DA LISTA A:</span>
+                <span class="valor-total" id="total-a">R$ 0,00</span>
             </div>
+            <button class="btn-limpar" onclick="limparLista('A')">Limpar Lista A</button>
         </div>
 
-        <!-- PESQUISA OPÇÃO B -->
-        <div class="column">
+        <!-- COLUNA OPÇÃO B -->
+        <div class="painel-pesquisa opcao-b">
             <h2>Pesquisa Opção B</h2>
-            <div class="form-group">
-                <label>Estabelecimento</label>
-                <select id="lojaB">
-                    <option value="Supermercado Avenida">Supermercado Avenida</option>
-                    <option value="Supermercado BH" selected>Supermercado BH</option>
-                    <option value="Supermercado JS">Supermercado JS</option>
-                    <option value="Supermercado Super Top">Supermercado Super Top</option>
+            
+            <div class="campo-grupo">
+                <label for="estabelecimento-b">Estabelecimento</label>
+                <select id="estabelecimento-b" onchange="atualizarProdutosDisponiveis('B')">
+                    <option value="">Selecione um estabelecimento...</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label>Produto</label>
-                <select id="produtoB">
-                    <option value="Arroz Saboroso 5kg" selected>Arroz Saboroso 5kg</option>
-                    <option value="Arroz Sepé 5kg">Arroz Sepé 5kg</option>
-                    <option value="Café 3 Corações 250g">Café 3 Corações 250g</option>
-                    <option value="Café Cafuso 250g">Café Cafuso 250g</option>
-                    <option value="Café Meridional 250g">Café Meridional 250g</option>
+            
+            <div class="campo-grupo">
+                <label for="produto-b">Produto</label>
+                <select id="produto-b">
+                    <option value="">Selecione um produto...</option>
                 </select>
             </div>
-            <button class="btn-buscar" onclick="buscarOpcao('B')">Buscar</button>
+            
+            <button class="btn btn-b" onclick="adicionarItem('B')">＋ Adicionar à Lista B</button>
 
-            <div class="result-box">
-                <div class="result-header">
-                    <div>Supermercado / Item</div>
-                    <div>Preço</div>
-                </div>
-                <div id="resultadoB">
-                    <p class="no-result">Nenhuma busca realizada</p>
-                </div>
+            <h3>Produtos na Lista B</h3>
+            <table class="tabela-resultados" id="tabela-b">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-itens-b">
+                    <tr>
+                        <td colspan="3" style="color: #666; text-align: center;">Nenhum produto adicionado.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="container-total">
+                <span>TOTAL DA LISTA B:</span>
+                <span class="valor-total" id="total-b">R$ 0,00</span>
             </div>
+            <button class="btn-limpar" onclick="limparLista('B')">Limpar Lista B</button>
         </div>
     </div>
 </div>
 
 <script>
-    // Vincula o evento da tecla Enter nos campos de seleção
-    document.querySelectorAll('select').forEach(select => {
-        select.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const coluna = this.id.endsWith('A') ? 'A' : 'B';
-                buscarOpcao(coluna);
+// Banco de dados em memória carregado do JSON
+let dadosProdutos = [];
+
+// Listas de compras independentes para comparação
+let listaA = [];
+let listaB = [];
+
+// Executa automaticamente ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+    carregarDadosJson();
+});
+
+/**
+ * Faz a requisição para buscar o arquivo dados.json de forma relativa
+ */
+function carregarDadosJson() {
+    fetch('dados.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro na resposta do servidor ao ler dados.json");
             }
+            return response.json();
+        })
+        .then(data => {
+            dadosProdutos = data;
+            popularSelectEstabelecimentos();
+        })
+        .catch(error => {
+            console.error("Erro ao carregar o arquivo JSON:", error);
+            alert("Não foi possível carregar os dados de preços. Verifique se o arquivo dados.json está na mesma pasta.");
         });
+}
+
+/**
+ * Preenche os seletores de estabelecimento dinamicamente com base no JSON
+ */
+function popularSelectEstabelecimentos() {
+    const selectA = document.getElementById("estabelecimento-a");
+    const selectB = document.getElementById("estabelecimento-b");
+
+    // Extrai nomes únicos de estabelecimentos usando Set
+    const estabelecimentosUnicos = [...new Set(dadosProdutos.map(item => item.estabelecimento))];
+
+    estabelecimentosUnicos.forEach(nomeLoja => {
+        const optA = document.createElement("option");
+        optA.value = nomeLoja;
+        optA.textContent = nomeLoja;
+        selectA.appendChild(optA);
+
+        const optB = document.createElement("option");
+        optB.value = nomeLoja;
+        optB.textContent = nomeLoja;
+        selectB.appendChild(optB);
     });
+}
 
-    function buscarOpcao(opcao) {
-        const lojaBuscada = document.getElementById(`loja${opcao}`).value.toLowerCase();
-        const produtoBuscado = document.getElementById(`produto${opcao}`).value.toLowerCase();
-        const containerResultado = document.getElementById(`resultado${opcao}`);
+/**
+ * Filtra os produtos disponíveis dependendo do supermercado que o usuário selecionou
+ * @param {string} opcao - 'A' ou 'B'
+ */
+function atualizarProdutosDisponiveis(opcao) {
+    const sufixo = opcao.toLowerCase();
+    const mercadoSelecionado = document.getElementById(`estabelecimento-${sufixo}`).value;
+    const selectProduto = document.getElementById(`produto-${sufixo}`);
 
-        fetch('dados.json')
-            .then(response => {
-                if (!response.ok) throw new Error('Não foi possível ler dados.json');
-                return response.json();
-            })
-            .then(dados => {
-                const resultado = dados.find(item => 
-                    item.estabelecimento.toLowerCase() === lojaBuscada && 
-                    item.produto.toLowerCase() === produtoBuscado
-                );
+    // Limpa produtos anteriores mantendo apenas a opção padrão
+    selectProduto.innerHTML = '<option value="">Selecione um produto...</option>';
 
-                if (resultado) {
-                    const endereco = resultado.endereco ? resultado.endereco : "Endereço não informado";
-                    const telefone = resultado.telefone ? resultado.telefone : "Telefone não informado";
-                    
-                    containerResultado.innerHTML = `
-                        <div class="card-result">
-                            <div class="card-main-info">
-                                <div class="market-name">${resultado.estabelecimento}</div>
-                                <div class="price-tag">R$ ${resultado.preco.toFixed(2).replace('.', ',')}</div>
-                            </div>
-                            <div class="product-detail">
-                                ${resultado.produto}<br>
-                                <span style="font-size: 11px;">(Coleta: ${resultado.data})</span>
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-item"><span>📍</span> ${endereco}</div>
-                                <div class="contact-item"><span>📞</span> ${telefone}</div>
-                            </div>
-                        </div>
-                    `;
-                } else {
-                    containerResultado.innerHTML = `<p class="no-result" style="color: #d32f2f;">Nenhum preço registrado para esta combinação.</p>`;
-                }
-            })
-            .catch(erro => {
-                console.error(erro);
-                containerResultado.innerHTML = `<p class="no-result" style="color: #d32f2f;">Erro ao carregar os dados das pesquisas.</p>`;
-            });
-    }
-</script>
+    if (!mercadoSelecionado) return;
+
+    // Filtra apenas os produtos que pertencem ao mercado selecionado
+    const produtosDoMercado = dadosProdutos.filter(item => item.estabelecimento === mercadoSelecionado);
+
+    produtosDoMercado.forEach(item => {
+        const opt = document.createElement("option");
+        opt.value = item.produto;
+        opt.textContent = `${item.produto} (R$ ${item.preco.toFixed(2).replace('.', ',')})`;
+        selectProduto.appendChild(opt);
+    });
+}
+
+/**
+
+
 </body>
 </html>
