@@ -342,6 +342,21 @@ function atualizarTabela(painel, lista) {
     lista.forEach((item, index) => {
         totalGeral += item.preco;
         const tr = document.createElement('tr');
+        
+        tr.innerHTML = `
+            <td>${item.produto}</td>
+            <td>R$ ${item.preco.toFixed(2).replace('.', ',')}</td>
+            <td><button class="btn-remover" onclick="removerItem('${painel}', ${index})">❌</button></td>
+        `;
+        tbody.appendChild(tr);
+    });
+    totalElemento.textContent = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
+}
+    
+    let totalGeral = 0;
+    lista.forEach((item, index) => {
+        totalGeral += item.preco;
+        const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>
                 <strong>${item.produto}</strong>
