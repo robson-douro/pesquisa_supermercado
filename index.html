@@ -206,7 +206,7 @@
 <div class="container">
     <div class="header">
         <h1>Comparador de Preços</h1>
-        <p>Preencha os campos e utilize o botão Buscar ou a tecla Enter</p>
+        <p>Preencha os campos e clique em Buscar ou aperte Enter</p>
     </div>
 
     <div class="search-columns">
@@ -271,13 +271,11 @@
         });
     });
 
-    // Função que faz a busca no dados.json e renderiza a resposta na tela
     function buscarOpcao(opcao) {
         const lojaBuscada = document.getElementById(`loja${opcao}`).value.trim().toLowerCase();
         const produtoBuscado = document.getElementById(`produto${opcao}`).value.trim().toLowerCase();
         const containerResultado = document.getElementById(`resultado${opcao}`);
 
-        // Busca o arquivo dados.json atualizado
         fetch('dados.json')
             .then(response => {
                 if (!response.ok) {
@@ -286,25 +284,27 @@
                 return response.json();
             })
             .then(dados => {
-                // Filtra os dados buscando a combinação exata de Estabelecimento E Produto
+                // Filtra os dados buscando por correspondências aproximadas (includes)
                 const resultado = dados.find(item => 
                     item.estabelecimento.toLowerCase().includes(lojaBuscada) && 
                     item.produto.toLowerCase().includes(produtoBuscado)
                 );
 
                 if (resultado) {
-                    // Trata os valores nulos vindos do JSON (Caso do Supermercado JS)
                     const endereco = resultado.endereco ? resultado.endereco : "Endereço não cadastrado";
                     const telefone = resultado.telefone ? resultado.telefone : "Telefone não cadastrado";
                     
-                    // Formata a data para o padrão brasileiro (DD/MM/AAAA)
-                    let dataFormatada = resultado.data;
-                    if(resultado.data && resultado.data.includes('-')) {
+                    // Tratamento seguro da data para evitar travamentos
+                    let dataFormatada = "Data não informada";
+                    if (resultado.data) {
                         const partes = resultado.data.split('-');
-                        dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
+                        if (partes.length === 3) {
+                            dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
+                        } else {
+                            dataFormatada = resultado.data;
+                        }
                     }
 
-                    // Injeta o novo card no HTML incluindo endereço e telefone com ícones visuais
                     containerResultado.innerHTML = `
                         <div class="card-result">
                             <div class="card-main-info">
@@ -314,6 +314,8 @@
                             <div class="product-detail">
                                 ${resultado.produto}<br>
                                 <span style="font-size: 11px;">(Coleta: ${dataFormatada})</span>
+                            </div>
+                            <div class="contact-info">
 
 
 </body>
