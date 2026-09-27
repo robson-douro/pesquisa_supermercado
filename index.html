@@ -5,280 +5,316 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparador de Preços</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f6f8fa;
-            margin: 0;
-            padding: 40px 20px;
-            color: #24292e;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        :root {
+            --primary-color: #4285f4;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --muted-text: #666666;
+            --border-color: #e0e0e0;
+            --price-color: #2e7d32;
         }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--card-background);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
         .header {
             text-align: center;
             margin-bottom: 30px;
         }
+
         .header h1 {
             font-size: 28px;
-            margin: 0 0 8px 0;
-            color: #1f2328;
+            margin-bottom: 10px;
+            color: #1a1f2c;
         }
+
         .header p {
+            color: var(--muted-text);
             font-size: 14px;
-            color: #636c76;
-            margin: 0;
         }
-        .container {
-            display: flex;
-            gap: 24px;
-            width: 100%;
-            max-width: 1000px;
-            justify-content: center;
+
+        .search-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
-        .card {
-            background: #ffffff;
-            border: 1px solid #d0d7de;
+
+        @media (max-width: 600px) {
+            .search-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .column {
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 24px;
-            width: 100%;
-            max-width: 460px;
-            box-shadow: 0 1px 3px rgba(31,35,40,0.04);
-            box-sizing: border-box;
+            padding: 20px;
+            background: #fafafa;
         }
-        .card h2 {
+
+        .column h2 {
             font-size: 18px;
-            margin: 0 0 20px 0;
-            color: #1f2328;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
         }
+
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 15px;
         }
+
         .form-group label {
             display: block;
             font-size: 12px;
             font-weight: 600;
-            margin-bottom: 6px;
-            color: #57606a;
             text-transform: uppercase;
+            color: var(--muted-text);
+            margin-bottom: 5px;
         }
+
         .form-group input {
             width: 100%;
-            padding: 10px 12px;
-            font-size: 14px;
-            border: 1px solid #d0d7de;
+            padding: 10px;
+            border: 1px solid var(--border-color);
             border-radius: 6px;
-            background-color: #f6f8fa;
-            color: #24292e;
-            box-sizing: border-box;
-            transition: background-color 0.2s, border-color 0.2s;
+            font-size: 14px;
         }
+
         .form-group input:focus {
-            background-color: #ffffff;
-            border-color: #0969da;
             outline: none;
-            box-shadow: 0 0 0 3px rgba(9,105,218,0.15);
+            border-color: var(--primary-color);
         }
+
         .btn-buscar {
-            display: block;
             width: 100%;
             padding: 12px;
-            background-color: #4a90e2;
+            background-color: var(--primary-color);
             color: white;
             border: none;
             border-radius: 6px;
-            font-size: 15px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
-            text-align: center;
-            transition: background-color 0.2s;
-            margin-top: 20px;
+            transition: background 0.2s;
+            margin-top: 10px;
         }
+
         .btn-buscar:hover {
-            background-color: #357abd;
+            background-color: #357ae8;
         }
-        .resultados-container {
-            margin-top: 20px;
-            border-top: 1px solid #d0d7de;
-            padding-top: 16px;
-            display: none;
+
+        .result-box {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border-color);
+            min-height: 120px;
         }
-        .busca-vazia {
-            color: #636c76;
-            font-size: 14px;
-            margin: 0;
-        }
-        .tabela-resultados {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-        }
-        .tabela-resultados th {
-            text-align: left;
-            padding-bottom: 8px;
-            color: #57606a;
-            border-bottom: 2px solid #d0d7de;
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 13px;
+            color: var(--muted-text);
+            margin-bottom: 10px;
             font-weight: 600;
         }
-        .tabela-resultados td {
-            padding: 10px 0;
-            border-bottom: 1px solid #f6f8fa;
-            vertical-align: top;
+
+        .card-result {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
-        .item-nome {
-            font-weight: 600;
-            color: #1f2328;
+
+        .card-main-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
         }
-        .item-sub {
+
+        .market-name {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .price-tag {
+            color: var(--price-color);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .product-detail {
+            font-size: 13px;
+            color: var(--muted-text);
+            margin-bottom: 8px;
+        }
+
+        .contact-info {
             font-size: 12px;
-            color: #636c76;
-            margin-top: 2px;
+            color: #555555;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 6px;
+            margin-top: 6px;
         }
-        .item-preco {
-            text-align: right;
-            font-weight: 600;
-            color: #1a7f37;
-            white-space: nowrap;
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-top: 3px;
+        }
+
+        .contact-item span {
+            margin-right: 6px;
+        }
+
+        .no-result {
+            color: #999;
+            font-style: italic;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
 
+<div class="container">
     <div class="header">
         <h1>Comparador de Preços</h1>
         <p>Preencha os campos e utilize o botão Buscar ou a tecla Enter</p>
     </div>
 
-    <div class="container">
+    <div class="search-columns">
         <!-- PESQUISA OPÇÃO A -->
-        <div class="card">
+        <div class="column">
             <h2>Pesquisa Opção A</h2>
             <div class="form-group">
                 <label>Estabelecimento</label>
-                <input type="text" id="est-a" placeholder="Selecione ou digite..." autocomplete="off">
+                <input type="text" id="lojaA" placeholder="Ex: Supermercado Avenida" value="Supermercado Avenida">
             </div>
             <div class="form-group">
                 <label>Produto</label>
-                <input type="text" id="prod-a" placeholder="Selecione ou digite..." autocomplete="off">
+                <input type="text" id="produtoA" placeholder="Ex: Arroz Saboroso 5kg" value="Arroz Saboroso 5kg">
             </div>
-            <button class="btn-buscar" onclick="realizarBusca('A')">Buscar</button>
-            
-            <div id="res-container-a" class="resultados-container"></div>
+            <button class="btn-buscar" onclick="buscarOpcao('A')">Buscar</button>
+
+            <div class="result-box" id="containerResultadoA">
+                <div class="result-header">
+                    <div>Supermercado / Item</div>
+                    <div>Preço</div>
+                </div>
+                <div id="resultadoA">
+                    <p class="no-result">Nenhuma busca realizada</p>
+                </div>
+            </div>
         </div>
 
         <!-- PESQUISA OPÇÃO B -->
-        <div class="card">
+        <div class="column">
             <h2>Pesquisa Opção B</h2>
             <div class="form-group">
                 <label>Estabelecimento</label>
-                <input type="text" id="est-b" placeholder="Selecione ou digite..." autocomplete="off">
+                <input type="text" id="lojaB" placeholder="Ex: Supermercado BH" value="Supermercado BH">
             </div>
             <div class="form-group">
                 <label>Produto</label>
-                <input type="text" id="prod-b" placeholder="Selecione ou digite..." autocomplete="off">
+                <input type="text" id="produtoB" placeholder="Ex: Arroz Saboroso 5kg" value="Arroz Saboroso 5kg">
             </div>
-            <button class="btn-buscar" onclick="realizarBusca('B')">Buscar</button>
-            
-            <div id="res-container-b" class="resultados-container"></div>
+            <button class="btn-buscar" onclick="buscarOpcao('B')">Buscar</button>
+
+            <div class="result-box" id="containerResultadoB">
+                <div class="result-header">
+                    <div>Supermercado / Item</div>
+                    <div>Preço</div>
+                </div>
+                <div id="resultadoB">
+                    <p class="no-result">Nenhuma busca realizada</p>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-    <script>
-        let bancoDados = [];
-
-        // Inicialização automática ao carregar o site
-        document.addEventListener("DOMContentLoaded", async () => {
-            try {
-                const resposta = await fetch('dados.json');
-                bancoDados = await resposta.json();
-                configurarSugestoes();
-                configurarEnter();
-            } catch (erro) {
-                console.error("Erro crítico ao ler o arquivo dados.json:", erro);
+<script>
+    // Atalho para buscar ao pressionar Enter nos inputs
+    document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const coluna = this.id.endsWith('A') ? 'A' : 'B';
+                buscarOpcao(coluna);
             }
         });
+    });
 
-        // Configura as opções suspensas (Datalist) nos campos
-        function configurarSugestoes() {
-            const mercadosUnicos = [...new Set(bancoDados.map(d => d.estabelecimento))].sort();
-            const produtosUnicos = [...new Set(bancoDados.map(d => d.produto))].sort();
+    // Função que faz a busca no dados.json e renderiza a resposta na tela
+    function buscarOpcao(opcao) {
+        const lojaBuscada = document.getElementById(`loja${opcao}`).value.trim().toLowerCase();
+        const produtoBuscado = document.getElementById(`produto${opcao}`).value.trim().toLowerCase();
+        const containerResultado = document.getElementById(`resultado${opcao}`);
 
-            criarDatalistElemento("lista-geral-mercados", mercadosUnicos);
-            criarDatalistElemento("lista-geral-produtos", produtosUnicos);
+        // Busca o arquivo dados.json atualizado
+        fetch('dados.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar o arquivo dados.json');
+                }
+                return response.json();
+            })
+            .then(dados => {
+                // Filtra os dados buscando a combinação exata de Estabelecimento E Produto
+                const resultado = dados.find(item => 
+                    item.estabelecimento.toLowerCase().includes(lojaBuscada) && 
+                    item.produto.toLowerCase().includes(produtoBuscado)
+                );
 
-            document.getElementById("est-a").setAttribute("list", "lista-geral-mercados");
-            document.getElementById("est-b").setAttribute("list", "lista-geral-mercados");
-            document.getElementById("prod-a").setAttribute("list", "lista-geral-produtos");
-            document.getElementById("prod-b").setAttribute("list", "lista-geral-produtos");
-        }
+                if (resultado) {
+                    // Trata os valores nulos vindos do JSON (Caso do Supermercado JS)
+                    const endereco = resultado.endereco ? resultado.endereco : "Endereço não cadastrado";
+                    const telefone = resultado.telefone ? resultado.telefone : "Telefone não cadastrado";
+                    
+                    // Formata a data para o padrão brasileiro (DD/MM/AAAA)
+                    let dataFormatada = resultado.data;
+                    if(resultado.data && resultado.data.includes('-')) {
+                        const partes = resultado.data.split('-');
+                        dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
+                    }
 
-        function criarDatalistElemento(id, itens) {
-            const datalist = document.createElement("datalist");
-            datalist.id = id;
-            datalist.innerHTML = itens.map(i => `<option value="${i}"></option>`).join("");
-            document.body.appendChild(datalist);
-        }
+                    // Injeta o novo card no HTML incluindo endereço e telefone com ícones visuais
+                    containerResultado.innerHTML = `
+                        <div class="card-result">
+                            <div class="card-main-info">
+                                <div class="market-name">${resultado.estabelecimento}</div>
+                                <div class="price-tag">R$ ${resultado.preco.toFixed(2).replace('.', ',')}</div>
+                            </div>
+                            <div class="product-detail">
+                                ${resultado.produto}<br>
+                                <span style="font-size: 11px;">(Coleta: ${dataFormatada})</span>
 
-        // Permite buscar usando a tecla Enter dentro dos inputs
-        function configurarEnter() {
-            ['a', 'b'].forEach(bloco => {
-                document.getElementById(`est-${bloco}`).addEventListener("keypress", (e) => {
-                    if (e.key === "Enter") realizarBusca(bloco.toUpperCase());
-                });
-                document.getElementById(`prod-${bloco}`).addEventListener("keypress", (e) => {
-                    if (e.key === "Enter") realizarBusca(bloco.toUpperCase());
-                });
-            });
-        }
 
-        // Executa o filtro de busca inteligente e mostra na tela
-        function realizarBusca(opcao) {
-            const sufixo = opcao.toLowerCase();
-            const termoMercado = document.getElementById(`est-${sufixo}`).value.trim().toLowerCase();
-            const termoProduto = document.getElementById(`prod-${sufixo}`).value.trim().toLowerCase();
-            const containerResultado = document.getElementById(`res-container-${sufixo}`);
-
-            // Filtra os dados combinando mercado e produto se preenchidos
-            const filtrados = bancoDados.filter(item => {
-                const bateMercado = termoMercado === "" || item.estabelecimento.toLowerCase().includes(termoMercado);
-                const bateProduto = termoProduto === "" || item.produto.toLowerCase().includes(termoProduto);
-                return bateMercado && bateProduto;
-            });
-
-            containerResultado.style.display = "block";
-
-            if (filtrados.length === 0) {
-                containerResultado.innerHTML = `<p class="busca-vazia">❌ Nenhum resultado encontrado.</p>`;
-                return;
-            }
-
-            let htmlTabela = `
-                <table class="tabela-resultados">
-                    <thead>
-                        <tr>
-                            <th>Supermercado / Item</th>
-                            <th style="text-align: right;">Preço</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
-
-            filtrados.forEach(item => {
-                const dataBR = item.data.split('-').reverse().join('/');
-                htmlTabela += `
-                    <tr>
-                        <td>
-                            <div class="item-nome">${item.estabelecimento}</div>
-                            <div class="item-sub">${item.produto} (Coleta: ${dataBR})</div>
-                        </td>
-                        <td class="item-preco">R$ ${item.preco.toFixed(2).replace('.', ',')}</td>
-                    </tr>
-                `;
-            });
-
-            htmlTabela += `</tbody></table>`;
-            containerResultado.innerHTML = htmlTabela;
-        }
-    </script>
 </body>
 </html>
