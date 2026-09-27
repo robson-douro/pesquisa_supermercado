@@ -321,9 +321,15 @@ function atualizarTabela(painel, lista) {
         totalGeral += item.preco;
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td>${item.produto}</td>
-            <td>R$ ${item.preco.toFixed(2).replace('.', ',')}</td>
-            <td><button class="btn-remover" onclick="removerItem('${painel}', ${index})">❌</button></td>
+            <td>
+                <strong>${item.produto}</strong>
+                <div style="font-size: 0.8em; color: #666; margin-top: 4px; line-height: 1.2;">
+                    📍 ${item.endereco}<br>
+                    📞 ${item.telefone}
+                </div>
+            </td>
+            <td style="vertical-align: top;">R$ ${item.preco.toFixed(2).replace('.', ',')}</td>
+            <td style="vertical-align: top;"><button class="btn-remover" onclick="removerItem('${painel}', ${index})">❌</button></td>
         `;
         tbody.appendChild(tr);
     });
