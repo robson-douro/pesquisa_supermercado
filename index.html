@@ -228,17 +228,48 @@
 </div>
 
 <script>
-    const dadosProdutos = [
-        {"estabelecimento": "Supermercado BH", "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 3442 0584", "produto": "Café 3 Corações 250g", "preco": 14.98, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado BH", "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 3442 0584", "produto": "Café Cafuso 250g", "preco": 13.89, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado BH", "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 3442 0584", "produto": "Café Meridional 250g", "preco": 14.79, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado BH", "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 3442 0584", "produto": "Arroz Saboroso 5kg", "preco": 19.98, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado BH", "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 3442 0584", "produto": "Arroz Sepé 5kg", "preco": 20.9, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado Avenida", "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 99868-3197", "produto": "Café 3 Corações 250g", "preco": 15.98, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado Avenida", "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 99868-3197", "produto": "Café Cafuso 250g", "preco": 13.98, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado Avenida", "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 99868-3197", "produto": "Café Meridional 250g", "preco": 13.79, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado Avenida", "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 99868-3197", "produto": "Arroz Saboroso 5kg", "preco": 17.98, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado Avenida", "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 99868-3197", "produto": "Arroz Sepé 5kg", "preco": 21.9, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado Super Top", "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 98895-9045", "produto": "Café 3 Corações 250g", "preco": 15.98, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado Super Top", "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 98895-9045", "produto": "Café Cafuso 250g", "preco": 13.98, "data": "26-09-2026"},
-        {"estabelecimento": "Supermercado Super Top", "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 98895-9045", "produto": "Café Meridional 250g", "preco": 13.79, "data": "26-09-2026"},
+    function buscarOpcao(opcao) {
+        const lojaBuscada = document.getElementById(`loja${opcao}`).value.trim().toLowerCase();
+        const produtoBuscado = document.getElementById(`produto${opcao}`).value.trim().toLowerCase();
+        const containerResultado = document.getElementById(`resultado${opcao}`);
+
+        fetch('dados.json')
+            .then(response => response.json())
+            .then(dados => {
+                const resultado = dados.find(item => 
+                    item.estabelecimento.toLowerCase().includes(lojaBuscada) && 
+                    item.produto.toLowerCase().includes(produtoBuscado)
+                );
+
+                if (resultado) {
+                    const endereco = resultado.endereco ? resultado.endereco : "Endereço não informado";
+                    const telefone = resultado.telefone ? resultado.telefone : "Telefone não informado";
+                    
+                    containerResultado.innerHTML = `
+                        <div class="card-result">
+                            <div class="card-main-info">
+                                <div class="market-name">${resultado.estabelecimento}</div>
+                                <div class="price-tag">R$ ${resultado.preco.toFixed(2).replace('.', ',')}</div>
+                            </div>
+                            <div class="product-detail">
+                                ${resultado.produto}<br>
+                                <span style="font-size: 11px;">(Coleta: ${resultado.data})</span>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-item"><span>📍</span> ${endereco}</div>
+                                <div class="contact-item"><span>📞</span> ${telefone}</div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    containerResultado.innerHTML = `<p class="no-result" style="color: #d32f2f;">Nenhum produto correspondente encontrado.</p>`;
+                }
+            })
+            .catch(erro => {
+                console.error(erro);
+                containerResultado.innerHTML = `<p class="no-result" style="color: #d32f2f;">Erro ao ler o arquivo dados.json local.</p>`;
+            });
+    }
+</script>
+</body>
+</html>
