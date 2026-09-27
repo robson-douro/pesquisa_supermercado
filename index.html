@@ -81,12 +81,18 @@
             color: var(--muted-text);
             margin-bottom: 5px;
         }
-        .form-group input {
+        .form-group select {
             width: 100%;
             padding: 10px;
             border: 1px solid var(--border-color);
             border-radius: 6px;
             font-size: 14px;
+            background-color: #ffffff;
+            color: var(--text-color);
+            outline: none;
+        }
+        .form-group select:focus {
+            border-color: var(--primary-color);
         }
         .btn-buscar {
             width: 100%;
@@ -184,11 +190,15 @@
             <h2>Pesquisa Opção A</h2>
             <div class="form-group">
                 <label>Estabelecimento</label>
-                <input type="text" id="lojaA" value="Supermercado Avenida">
+                <select id="lojaA">
+                    <!-- Carregado via JS -->
+                </select>
             </div>
             <div class="form-group">
                 <label>Produto</label>
-                <input type="text" id="produtoA" value="Arroz Sepé 5kg">
+                <select id="produtoA">
+                    <!-- Carregado via JS -->
+                </select>
             </div>
             <button class="btn-buscar" onclick="buscarOpcao('A')">Buscar</button>
 
@@ -208,11 +218,15 @@
             <h2>Pesquisa Opção B</h2>
             <div class="form-group">
                 <label>Estabelecimento</label>
-                <input type="text" id="lojaB" value="Supermercado BH">
+                <select id="lojaB">
+                    <!-- Carregado via JS -->
+                </select>
             </div>
             <div class="form-group">
                 <label>Produto</label>
-                <input type="text" id="produtoB" value="Arroz Saboroso 5kg">
+                <select id="produtoB">
+                    <!-- Carregado via JS -->
+                </select>
             </div>
             <button class="btn-buscar" onclick="buscarOpcao('B')">Buscar</button>
 
@@ -230,58 +244,71 @@
 </div>
 
 <script>
-    // Monitora a digitação nos inputs e ativa a busca se pressionar Enter
-    document.querySelectorAll('input').forEach(input => {
-        input.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const coluna = this.id.endsWith('A') ? 'A' : 'B';
-                buscarOpcao(coluna);
-            }
-        });
-    });
+    let bancoDados = [];
 
-    function buscarOpcao(opcao) {
-        const lojaBuscada = document.getElementById(`loja${opcao}`).value.trim().toLowerCase();
-        const produtoBuscado = document.getElementById(`produto${opcao}`).value.trim().toLowerCase();
-        const containerResultado = document.getElementById(`resultado${opcao}`);
-
+    // Inicializa carregando as listas estáticas do dados.json apenas uma vez
+    window.addEventListener('DOMContentLoaded', () => {
         fetch('dados.json')
             .then(response => response.json())
             .then(dados => {
-                const resultado = dados.find(item => 
-                    item.estabelecimento.toLowerCase().includes(lojaBuscada) && 
-                    item.produto.toLowerCase().includes(produtoBuscado)
-                );
+                bancoDados = dados;
+                
+                const estabelecimentos = [...new Set(dados.map(item => item.estabelecimento))].sort();
+                const produtos = [...new Set(dados.map(item => item.produto))].sort();
 
-                if (resultado) {
-                    const endereco = resultado.endereco ? resultado.endereco : "Endereço não informado";
-                    const telefone = resultado.telefone ? resultado.telefone : "Telefone não informado";
-                    
-                    containerResultado.innerHTML = `
-                        <div class="card-result">
-                            <div class="card-main-info">
-                                <div class="market-name">${resultado.estabelecimento}</div>
-                                <div class="price-tag">R$ ${resultado.preco.toFixed(2).replace('.', ',')}</div>
-                            </div>
-                            <div class="product-detail">
-                                ${resultado.produto}<br>
-                                <span style="font-size: 11px;">(Coleta: ${resultado.data})</span>
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-item"><span>📍</span> ${endereco}</div>
-                                <div class="contact-item"><span>📞</span> ${telefone}</div>
-                            </div>
-                        </div>
-                    `;
-                } else {
-                    containerResultado.innerHTML = `<p class="no-result" style="color: #d32f2f;">Nenhum produto correspondente encontrado.</p>`;
-                }
+                popularSelect('lojaA', estabelecimentos, "Supermercado Avenida");
+                popularSelect('lojaB', estabelecimentos, "Supermercado BH");
+                popularSelect('produtoA', produtos, "Arroz Sepé 5kg");
+                popularSelect('produtoB', produtos, "Arroz Saboroso 5kg");
+                
+                // Vincula escuta da tecla Enter nos campos carregados
+                vincularEventoEnter();
             })
-            .catch(erro => {
-                console.error(erro);
-                containerResultado.innerHTML = `<p class="no-result" style="color: #d32f2f;">Erro ao ler o arquivo dados.json local.</p>`;
-            });
+            .catch(erro => console.error('Erro ao inicializar listas:', erro));
+    });
+
+    function popularSelect(idElemento, listaItens, valorPadrao) {
+        const select = document.getElementById(idElemento);
+        select.innerHTML = '';
+        listaItens.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item;
+            option.textContent = item;
+            if(item === valorPadrao) option.selected = true;
+            select.appendChild(option);
+        });
     }
-</script>
+
+    function vincularEventoEnter() {
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const coluna = this.id.endsWith('A') ? 'A' : 'B';
+                    buscarOpcao(coluna);
+                }
+            });
+        });
+    }
+
+    function buscarOpcao(opcao) {
+        const lojaBuscada = document.getElementById(`loja${opcao}`).value.toLowerCase();
+        const produtoBuscado = document.getElementById(`produto${opcao}`).value.toLowerCase();
+        const containerResultado = document.getElementById(`resultado${opcao}`);
+
+        if (bancoDados.length === 0) return;
+
+        const resultado = bancoDados.find(item => 
+            item.estabelecimento.toLowerCase() === lojaBuscada && 
+            item.produto.toLowerCase() === produtoBuscado
+        );
+
+        if (resultado) {
+            const endereco = resultado.endereco ? resultado.endereco : "Endereço não informado";
+            const telefone = resultado.telefone ? resultado.telefone : "Telefone não informado";
+            
+            containerResultado.innerHTML = `
+                <div class="card-result">
+
+
 </body>
 </html>
