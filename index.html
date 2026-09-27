@@ -191,13 +191,20 @@
             <div class="form-group">
                 <label>Estabelecimento</label>
                 <select id="lojaA">
-                    <!-- Carregado via JS -->
+                    <option value="Supermercado Avenida" selected>Supermercado Avenida</option>
+                    <option value="Supermercado BH">Supermercado BH</option>
+                    <option value="Supermercado JS">Supermercado JS</option>
+                    <option value="Supermercado Super Top">Supermercado Super Top</option>
                 </select>
             </div>
             <div class="form-group">
                 <label>Produto</label>
                 <select id="produtoA">
-                    <!-- Carregado via JS -->
+                    <option value="Arroz Saboroso 5kg">Arroz Saboroso 5kg</option>
+                    <option value="Arroz Sepé 5kg" selected>Arroz Sepé 5kg</option>
+                    <option value="Café 3 Corações 250g">Café 3 Corações 250g</option>
+                    <option value="Café Cafuso 250g">Café Cafuso 250g</option>
+                    <option value="Café Meridional 250g">Café Meridional 250g</option>
                 </select>
             </div>
             <button class="btn-buscar" onclick="buscarOpcao('A')">Buscar</button>
@@ -219,13 +226,20 @@
             <div class="form-group">
                 <label>Estabelecimento</label>
                 <select id="lojaB">
-                    <!-- Carregado via JS -->
+                    <option value="Supermercado Avenida">Supermercado Avenida</option>
+                    <option value="Supermercado BH" selected>Supermercado BH</option>
+                    <option value="Supermercado JS">Supermercado JS</option>
+                    <option value="Supermercado Super Top">Supermercado Super Top</option>
                 </select>
             </div>
             <div class="form-group">
                 <label>Produto</label>
                 <select id="produtoB">
-                    <!-- Carregado via JS -->
+                    <option value="Arroz Saboroso 5kg" selected>Arroz Saboroso 5kg</option>
+                    <option value="Arroz Sepé 5kg">Arroz Sepé 5kg</option>
+                    <option value="Café 3 Corações 250g">Café 3 Corações 250g</option>
+                    <option value="Café Cafuso 250g">Café Cafuso 250g</option>
+                    <option value="Café Meridional 250g">Café Meridional 250g</option>
                 </select>
             </div>
             <button class="btn-buscar" onclick="buscarOpcao('B')">Buscar</button>
@@ -244,71 +258,61 @@
 </div>
 
 <script>
-    let bancoDados = [];
-
-    // Inicializa carregando as listas estáticas do dados.json apenas uma vez
-    window.addEventListener('DOMContentLoaded', () => {
-        fetch('dados.json')
-            .then(response => response.json())
-            .then(dados => {
-                bancoDados = dados;
-                
-                const estabelecimentos = [...new Set(dados.map(item => item.estabelecimento))].sort();
-                const produtos = [...new Set(dados.map(item => item.produto))].sort();
-
-                popularSelect('lojaA', estabelecimentos, "Supermercado Avenida");
-                popularSelect('lojaB', estabelecimentos, "Supermercado BH");
-                popularSelect('produtoA', produtos, "Arroz Sepé 5kg");
-                popularSelect('produtoB', produtos, "Arroz Saboroso 5kg");
-                
-                // Vincula escuta da tecla Enter nos campos carregados
-                vincularEventoEnter();
-            })
-            .catch(erro => console.error('Erro ao inicializar listas:', erro));
+    // Vincula o evento da tecla Enter nos campos de seleção
+    document.querySelectorAll('select').forEach(select => {
+        select.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const coluna = this.id.endsWith('A') ? 'A' : 'B';
+                buscarOpcao(coluna);
+            }
+        });
     });
-
-    function popularSelect(idElemento, listaItens, valorPadrao) {
-        const select = document.getElementById(idElemento);
-        select.innerHTML = '';
-        listaItens.forEach(item => {
-            const option = document.createElement('option');
-            option.value = item;
-            option.textContent = item;
-            if(item === valorPadrao) option.selected = true;
-            select.appendChild(option);
-        });
-    }
-
-    function vincularEventoEnter() {
-        document.querySelectorAll('select').forEach(select => {
-            select.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    const coluna = this.id.endsWith('A') ? 'A' : 'B';
-                    buscarOpcao(coluna);
-                }
-            });
-        });
-    }
 
     function buscarOpcao(opcao) {
         const lojaBuscada = document.getElementById(`loja${opcao}`).value.toLowerCase();
         const produtoBuscado = document.getElementById(`produto${opcao}`).value.toLowerCase();
         const containerResultado = document.getElementById(`resultado${opcao}`);
 
-        if (bancoDados.length === 0) return;
+        fetch('dados.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Não foi possível ler dados.json');
+                return response.json();
+            })
+            .then(dados => {
+                const resultado = dados.find(item => 
+                    item.estabelecimento.toLowerCase() === lojaBuscada && 
+                    item.produto.toLowerCase() === produtoBuscado
+                );
 
-        const resultado = bancoDados.find(item => 
-            item.estabelecimento.toLowerCase() === lojaBuscada && 
-            item.produto.toLowerCase() === produtoBuscado
-        );
-
-        if (resultado) {
-            const endereco = resultado.endereco ? resultado.endereco : "Endereço não informado";
-            const telefone = resultado.telefone ? resultado.telefone : "Telefone não informado";
-            
-            containerResultado.innerHTML = `
-                <div class="card-result">
-
-
+                if (resultado) {
+                    const endereco = resultado.endereco ? resultado.endereco : "Endereço não informado";
+                    const telefone = resultado.telefone ? resultado.telefone : "Telefone não informado";
+                    
+                    containerResultado.innerHTML = `
+                        <div class="card-result">
+                            <div class="card-main-info">
+                                <div class="market-name">${resultado.estabelecimento}</div>
+                                <div class="price-tag">R$ ${resultado.preco.toFixed(2).replace('.', ',')}</div>
+                            </div>
+                            <div class="product-detail">
+                                ${resultado.produto}<br>
+                                <span style="font-size: 11px;">(Coleta: ${resultado.data})</span>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-item"><span>📍</span> ${endereco}</div>
+                                <div class="contact-item"><span>📞</span> ${telefone}</div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    containerResultado.innerHTML = `<p class="no-result" style="color: #d32f2f;">Nenhum preço registrado para esta combinação.</p>`;
+                }
+            })
+            .catch(erro => {
+                console.error(erro);
+                containerResultado.innerHTML = `<p class="no-result" style="color: #d32f2f;">Erro ao carregar os dados das pesquisas.</p>`;
+            });
+    }
+</script>
 </body>
 </html>
