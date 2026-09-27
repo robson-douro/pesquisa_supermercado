@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Preços</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --muted-text: #666666;
+            --border-color: #e0e0e0;
+            --price-color: #2e7d32;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--card-background);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #1a1f2c;
+        }
+        .header p {
+            color: var(--muted-text);
+            font-size: 14px;
+        }
+        .search-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        @media (max-width: 600px) {
+            .search-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+        .column {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            background: #fafafa;
+        }
+        .column h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--muted-text);
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .btn-buscar {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+        .btn-buscar:hover {
+            background-color: #357ae8;
+        }
+        .result-box {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border-color);
+            min-height: 120px;
+        }
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 13px;
+            color: var(--muted-text);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .card-result {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .card-main-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .market-name {
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .price-tag {
+            color: var(--price-color);
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .product-detail {
+            font-size: 13px;
+            color: var(--muted-text);
+            margin-bottom: 8px;
+        }
+        .contact-info {
+            font-size: 12px;
+            color: #555555;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 6px;
+            margin-top: 6px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-top: 3px;
+        }
+        .contact-item span {
+            margin-right: 6px;
+        }
+        .no-result {
+            color: #999;
+            font-style: italic;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Comparador de Preços</h1>
+        <p>Preencha os campos e utilize o botão Buscar ou a tecla Enter</p>
+    </div>
+
+    <div class="search-columns">
+        <div class="column">
+            <h2>Pesquisa Opção A</h2>
+            <div class="form-group">
+                <label>Estabelecimento</label>
+                <input type="text" id="lojaA" value="Supermercado Avenida">
+            </div>
+            <div class="form-group">
+                <label>Produto</label>
+                <input type="text" id="produtoA" value="Arroz Saboroso 5kg">
+            </div>
+            <button class="btn-buscar" onclick="buscarOpcao('A')">Buscar</button>
+
+            <div class="result-box">
+                <div class="result-header">
+                    <div>Supermercado / Item</div>
+                    <div>Preço</div>
+                </div>
+                <div id="resultadoA">
+                    <p class="no-result">Nenhuma busca realizada</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <h2>Pesquisa Opção B</h2>
+            <div class="form-group">
+                <label>Estabelecimento</label>
+                <input type="text" id="lojaB" value="Supermercado BH">
+            </div>
+            <div class="form-group">
+                <label>Produto</label>
+                <input type="text" id="produtoB" value="Arroz Saboroso 5kg">
+            </div>
+            <button class="btn-buscar" onclick="buscarOpcao('B')">Buscar</button>
+
+            <div class="result-box">
+                <div class="result-header">
+                    <div>Supermercado / Item</div>
+                    <div>Preço</div>
+                </div>
+                <div id="resultadoB">
+                    <p class="no-result">Nenhuma busca realizada</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const dadosProdutos = [
+        {"estabelecimento": "Supermercado BH", "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 3442 0584", "produto": "Café 3 Corações 250g", "preco": 14.98, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado BH", "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 3442 0584", "produto": "Café Cafuso 250g", "preco": 13.89, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado BH", "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 3442 0584", "produto": "Café Meridional 250g", "preco": 14.79, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado BH", "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 3442 0584", "produto": "Arroz Saboroso 5kg", "preco": 19.98, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado BH", "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 3442 0584", "produto": "Arroz Sepé 5kg", "preco": 20.9, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado Avenida", "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 99868-3197", "produto": "Café 3 Corações 250g", "preco": 15.98, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado Avenida", "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 99868-3197", "produto": "Café Cafuso 250g", "preco": 13.98, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado Avenida", "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 99868-3197", "produto": "Café Meridional 250g", "preco": 13.79, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado Avenida", "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 99868-3197", "produto": "Arroz Saboroso 5kg", "preco": 17.98, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado Avenida", "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 99868-3197", "produto": "Arroz Sepé 5kg", "preco": 21.9, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado Super Top", "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 98895-9045", "produto": "Café 3 Corações 250g", "preco": 15.98, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado Super Top", "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 98895-9045", "produto": "Café Cafuso 250g", "preco": 13.98, "data": "26-09-2026"},
+        {"estabelecimento": "Supermercado Super Top", "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000", "telefone": "(27) 98895-9045", "produto": "Café Meridional 250g", "preco": 13.79, "data": "26-09-2026"},
