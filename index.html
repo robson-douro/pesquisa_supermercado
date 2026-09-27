@@ -237,13 +237,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Faz a requisição para buscar o arquivo dados.json de forma relativa
+
+ * Faz a requisição para buscar o arquivo dados.json tratando caminhos do GitHub Pages
  */
 function carregarDadosJson() {
+    // Tenta primeiro o caminho relativo padrão
     fetch('dados.json')
         .then(response => {
             if (!response.ok) {
-                throw new Error("Erro na resposta do servidor ao ler dados.json");
+                // Se der erro 404, tenta buscar considerando a subpasta do repositório no GitHub Pages
+                const pathArray = window.location.pathname.split('/');
+                const repoName = pathArray[1]; // Pega o nome do repositório
+                return fetch(`/${repoName}/dados.json`);
+            }
+            return response;
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Arquivo dados.json não encontrado nas rotas testadas.");
             }
             return response.json();
         })
@@ -252,10 +263,11 @@ function carregarDadosJson() {
             popularSelectEstabelecimentos();
         })
         .catch(error => {
-            console.error("Erro ao carregar o arquivo JSON:", error);
-            alert("Não foi possível carregar os dados de preços. Verifique se o arquivo dados.json está na mesma pasta.");
+            console.error("Erro crítico ao carregar o arquivo JSON:", error);
+            alert("Atenção: O arquivo 'dados.json' não foi encontrado. Certifique-se de que ele foi enviado para o GitHub com este nome exato (tudo em minúsculo) e está na mesma pasta do seu index.html.");
         });
 }
+
 
 /**
  * Preenche os seletores de estabelecimento dinamicamente com base no JSON
