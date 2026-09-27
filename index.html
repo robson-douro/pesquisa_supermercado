@@ -224,129 +224,134 @@
 </div>
 
 <script>
-// Banco de dados incorporado e validado
-const dadosProdutos = [
-  {
-    "estabelecimento": "Supermercado BH",
-    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 3442 0584",
-    "produto": "Café 3 Corações 250g",
-    "preco": 14.98,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado BH",
-    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 3442 0584",
-    "produto": "Café Cafuso 250g",
-    "preco": 13.89,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado BH",
-    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 3442 0584",
-    "produto": "Café Meridional 250g",
-    "preco": 14.79,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado BH",
-    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 3442 0584",
-    "produto": "Arroz Saboroso 5kg",
-    "preco": 19.98,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado BH",
-    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 3442 0584",
-    "produto": "Arroz Sepé 5kg",
-    "preco": 20.9,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado Avenida",
-    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99868-3197",
-    "produto": "Café 3 Corações 250g",
-    "preco": 15.98,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado Avenida",
-    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99868-3197",
-    "produto": "Café Cafuso 250g",
-    "preco": 13.98,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado Avenida",
-    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99868-3197",
-    "produto": "Café Meridional 250g",
-    "preco": 13.79,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado Avenida",
-    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99868-3197",
-    "produto": "Arroz Saboroso 5kg",
-    "preco": 17.98,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado Avenida",
-    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99868-3197",
-    "produto": "Arroz Sepé 5kg",
-    "preco": 21.9,
-    "data": "2026-09-26"
-  },
-    
-  {
-    "estabelecimento": "Supermercado Super Top",
-    "endereco": "Rua Vítor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": ["(27) 3060-8597, (27) 98895-9045"],
-    "produto": "Arroz Sepé 5kg",
-    "preco": 20.9,
-    "data": "2026-09-26"
-  },
-      {
-    "estabelecimento": "Supermercado Super Top",
-    "endereco": "Rua Vítor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": ["(27) 3060-8597, (27) 98895-9045"],
-    "produto": "Arroz Sabooso 5kg",
-    "preco": 19.9,
-    "data": "2026-09-26"
-  },
-      {
-    "estabelecimento": "Supermercado Super Top",
-    "endereco": "Rua Vítor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": ["(27) 3060-8597, (27) 98895-9045"],
-    "produto": "Café 3 Corações 250g",
-    "preco": 14.9,
-    "data": "2026-09-26"
-  },
-          {
-    "estabelecimento": "Supermercado Super Top",
-    "endereco": "Rua Vítor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": ["(27) 3060-8597, (27) 98895-9045"],
-    "produto": "Café Meridional 250g",
-    "preco": 13.8,
-    "data": "2026-09-26"
-  },
-          {
-    "estabelecimento": "Supermercado Super Top",
-    "endereco": "Rua Vítor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": ["(27) 3060-8597, (27) 98895-9045"],
-    "produto": "Café Cafuso 250g",
-    "preco": 13.5,
-    "data": "2026-09-26"
-  }
+// Variável global que armazenará os dados após a requisição do arquivo JSON
+let dadosProdutos = [];
 
+let listaA = [];
+let listaB = [];
+
+// Carrega os dados assincronamente através de um Fetch API
+window.onload = function() {
+    fetch('dados.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Não foi possível carregar o arquivo JSON.");
+            }
+            return response.json();
+        })
+        .then(data => {
+            dadosProdutos = data;
+            popularEstabelecimentos();
+        })
+        .catch(error => {
+            console.error("Erro ao carregar o banco de dados:", error);
+        });
+};
+
+function popularEstabelecimentos() {
+    const selectA = document.getElementById('estabelecimento-a');
+    const selectB = document.getElementById('estabelecimento-b');
+    
+    const mercadosUnicos = [...new Set(dadosProdutos.map(item => item.estabelecimento))];
+    
+    mercadosUnicos.forEach(nomeEst => {
+        const optA = document.createElement('option');
+        optA.value = nomeEst; optA.textContent = nomeEst;
+        selectA.appendChild(optA);
+        
+        const optB = document.createElement('option');
+        optB.value = nomeEst; optB.textContent = nomeEst;
+        selectB.appendChild(optB);
+    });
+}
+
+function atualizarProdutosDisponiveis(painel) {
+    const sufixo = painel.toLowerCase();
+    const estSelecionado = document.getElementById(`estabelecimento-${sufixo}`).value;
+    const selectProduto = document.getElementById(`produto-${sufixo}`);
+    
+    selectProduto.innerHTML = '<option value="">Selecione um produto...</option>';
+    if (!estSelecionado) return;
+    
+    const produtosFiltrados = dadosProdutos.filter(item => item.estabelecimento === estSelecionado);
+    
+    produtosFiltrados.forEach(item => {
+        const opt = document.createElement('option');
+        opt.value = item.produto;
+        opt.textContent = `${item.produto} - R$ ${item.preco.toFixed(2).replace('.', ',')}`;
+        selectProduto.appendChild(opt);
+    });
+}
+
+function adicionarItem(painel) {
+    const sufixo = painel.toLowerCase();
+    const estSelecionado = document.getElementById(`estabelecimento-${sufixo}`).value;
+    const prodSelecionado = document.getElementById(`produto-${sufixo}`).value;
+    
+    if (!estSelecionado || !prodSelecionado) {
+        alert("Por favor, selecione um estabelecimento e um produto primeiro!");
+        return;
+    }
+    
+    const itemEncontrado = dadosProdutos.find(item => item.estabelecimento === estSelecionado && item.produto === prodSelecionado);
+    
+    if (painel === 'A') {
+        listaA.push(itemEncontrado);
+        atualizarTabela('A', listaA);
+    } else {
+        listaB.push(itemEncontrado);
+        atualizarTabela('B', listaB);
+    }
+}
+
+function atualizarTabela(painel, lista) {
+    const sufixo = painel.toLowerCase();
+    const tbody = document.getElementById(`lista-itens-${sufixo}`);
+    const totalElemento = document.getElementById(`total-${sufixo}`);
+    
+    tbody.innerHTML = "";
+    if (lista.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="3" style="color: #666; text-align: center;">Nenhum produto adicionado.</td></tr>`;
+        totalElemento.textContent = "R\$ 0,00";
+        return;
+    }
+    
+    let totalGeral = 0;
+    lista.forEach((item, index) => {
+        totalGeral += item.preco;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${item.produto}</td>
+            <td>R$ ${item.preco.toFixed(2).replace('.', ',')}</td>
+            <td><button class="btn-remover" onclick="removerItem('${painel}', ${index})">❌</button></td>
+        `;
+        tbody.appendChild(tr);
+    });
+    totalElemento.textContent = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
+}
+
+function removerItem(painel, index) {
+    if (painel === 'A') {
+        listaA.splice(index, 1);
+        atualizarTabela('A', listaA);
+    } else {
+        listaB.splice(index, 1);
+        atualizarTabela('B', listaB);
+    }
+}
+
+function limparLista(painel) {
+    const sufixo = painel.toLowerCase();
+    document.getElementById(`estabelecimento-${sufixo}`).value = "";
+    document.getElementById(`produto-${sufixo}`).innerHTML = '<option value="">Selecione um produto...</option>';
+    if (painel === 'A') {
+        listaA = []; 
+        atualizarTabela('A', listaA);
+    } else {
+        listaB = []; 
+        atualizarTabela('B', listaB);
+    }
+}
+</script>
 </body>
 </html>
