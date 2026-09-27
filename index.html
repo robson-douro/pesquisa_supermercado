@@ -224,110 +224,128 @@
 </div>
 
 <script>
-// Banco de dados em memória carregado do JSON
-let dadosProdutos = [];
-
-// Listas de compras independentes para comparação
-let listaA = [];
-let listaB = [];
-
-// Executa automaticamente ao carregar a página
-document.addEventListener("DOMContentLoaded", () => {
-    carregarDadosJson();
-});
-
-/**
-
- * Faz a requisição para buscar o arquivo dados.json tratando caminhos do GitHub Pages
- */
-function carregarDadosJson() {
-    // Constrói a URL exata apontando para o arquivo na mesma pasta do site
-    const urlDados = window.location.origin + window.location.pathname.replace('index.html', '') + 'dados.json';
-    
-    fetch(urlDados)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erro " + response.status + " ao ler o arquivo dados.json");
-            }
-            return response.json();
-        })
-        .then(data => {
-            dadosProdutos = data;
-            popularSelectEstabelecimentos();
-        })
-        .catch(error => {
-            console.error("Erro ao carregar o arquivo JSON:", error);
-            alert("Não foi possível carregar os dados de preços. Verifique se o arquivo dados.json está na mesma pasta do index.html no seu GitHub.");
-        });
-}
-
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Arquivo dados.json não encontrado nas rotas testadas.");
-            }
-            return response.json();
-        })
-        .then(data => {
-            dadosProdutos = data;
-            popularSelectEstabelecimentos();
-        })
-        .catch(error => {
-            console.error("Erro crítico ao carregar o arquivo JSON:", error);
-            alert("Atenção: O arquivo 'dados.json' não foi encontrado. Certifique-se de que ele foi enviado para o GitHub com este nome exato (tudo em minúsculo) e está na mesma pasta do seu index.html.");
-        });
-}
-
-
-/**
- * Preenche os seletores de estabelecimento dinamicamente com base no JSON
- */
-function popularSelectEstabelecimentos() {
-    const selectA = document.getElementById("estabelecimento-a");
-    const selectB = document.getElementById("estabelecimento-b");
-
-    // Extrai nomes únicos de estabelecimentos usando Set
-    const estabelecimentosUnicos = [...new Set(dadosProdutos.map(item => item.estabelecimento))];
-
-    estabelecimentosUnicos.forEach(nomeLoja => {
-        const optA = document.createElement("option");
-        optA.value = nomeLoja;
-        optA.textContent = nomeLoja;
-        selectA.appendChild(optA);
-
-        const optB = document.createElement("option");
-        optB.value = nomeLoja;
-        optB.textContent = nomeLoja;
-        selectB.appendChild(optB);
-    });
-}
-
-/**
- * Filtra os produtos disponíveis dependendo do supermercado que o usuário selecionou
- * @param {string} opcao - 'A' ou 'B'
- */
-function atualizarProdutosDisponiveis(opcao) {
-    const sufixo = opcao.toLowerCase();
-    const mercadoSelecionado = document.getElementById(`estabelecimento-${sufixo}`).value;
-    const selectProduto = document.getElementById(`produto-${sufixo}`);
-
-    // Limpa produtos anteriores mantendo apenas a opção padrão
-    selectProduto.innerHTML = '<option value="">Selecione um produto...</option>';
-
-    if (!mercadoSelecionado) return;
-
-    // Filtra apenas os produtos que pertencem ao mercado selecionado
-    const produtosDoMercado = dadosProdutos.filter(item => item.estabelecimento === mercadoSelecionado);
-
-    produtosDoMercado.forEach(item => {
-        const opt = document.createElement("option");
-        opt.value = item.produto;
-        opt.textContent = `${item.produto} (R$ ${item.preco.toFixed(2).replace('.', ',')})`;
-        selectProduto.appendChild(opt);
-    });
-}
-
-/**
-
+// Banco de dados incorporado diretamente (Plano infalível contra erros de caminho)
+const dadosProdutos = [
+  {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Café 3 Corações 250g",
+    "preco": 14.98,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Café Cafuso 250g",
+    "preco": 13.89,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Café Meridional 250g",
+    "preco": 14.79,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Arroz Saboroso 5kg",
+    "preco": 19.98,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Arroz Sepé 5kg",
+    "preco": 20.9,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Café 3 Corações 250g",
+    "preco": 15.98,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Café Cafuso 250g",
+    "preco": 13.98,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Café Meridional 250g",
+    "preco": 13.79,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Arroz Saboroso 5kg",
+    "preco": 17.98,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Arroz Sepé 5kg",
+    "preco": 21.9,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vítor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": ["(27) 3060-8597, (27) 98895-9045"],
+    "produto": "Arroz Sepé 5kg",
+    "preco": 20.9,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vítor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": ["(27) 3060-8597, (27) 98895-9045"],
+    "produto": "Arroz Sabooso 5kg",
+    "preco": 19.9,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vítor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": ["(27) 3060-8597, (27) 98895-9045"],
+    "produto": "Café 3 Corações 250g",
+    "preco": 14.9,
+    "data": "2026-09-26"
+  },
+          {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vítor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": ["(27) 3060-8597, (27) 98895-9045"],
+    "produto": "Café Meridional 250g",
+    "preco": 13.8,
+    "data": "2026-09-26"
+  },
+          {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vítor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": ["(27) 3060-8597, (27) 98895-9045"],
+    "produto": "Café Cafuso 250g",
+    "preco": 13.5,
+    "data": "2026-09-26"
+  }
 
 </body>
 </html>
