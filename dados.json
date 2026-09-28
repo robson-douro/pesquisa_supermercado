@@ -3,8 +3,121 @@
     "estabelecimento": "Supermercado BH",
     "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 3442 0584",
-    "produto": "Café 3 Corações 250g",
-    "preco": 14.98,
+    "produto": "Bombom Garoto Sortidos Cx 220g",
+    "preco": 10.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Chocolate Garoto Barra 80g",
+    "preco": 7.48,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Biscoito Chocobiscuit Garoto Pcte 78g",
+    "preco": 4.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Wafer Chocostick Garoto Pcte 24g e 26g",
+    "preco": 2.28,
+    "data": "2026-09-26"
+  },
+  
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Bebida Proteica Nescau TP 250ml",
+    "preco": 6.58,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Pasta de Amendoim Dacolonia 500g",
+    "preco": 12.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Granola Jasmine Zero Acucar Pcte 250g",
+    "preco": 13.48,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Pão de Forma Jasmine Frutas e Castanhas sem Gluten Pcte 350g",
+    "preco": 19.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Biscoito Cookies Lanca Fit Pcte 120g",
+    "preco": 6.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Doce de Leite Veneza Zero 250g",
+    "preco": 15.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Bebida Mista da Fruta TP 200ml",
+    "preco": 1.18,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Bebida Mista da Fruta TP 1L",
+    "preco": 3.48,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Agua de Coco Puro Coco TP 1L",
+    "preco": 8.98,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Concentrado Liquido Dafruta Caju 1L",
+    "preco": 3.98,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Suco Bela Ischia Uva e Maca Especiale 1.35L",
+    "preco": 9.48,
     "data": "2026-09-26"
   },
   {
