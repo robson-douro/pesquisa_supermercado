@@ -204,6 +204,278 @@
     "estabelecimento": "Supermercado Super Top",
     "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 98895-9045",
+    "produto": "Salsicha Hotdog Pif Paf kg",
+    "preco": 8.69,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Ave Especial Temp Xiken kg",
+    "preco": 12.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Hamburguer Misto Burger Seg Picanha",
+    "preco": 0.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Batata Congelada Nobre 2kg Palito",
+    "preco": 27.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Pao de Queijo Pif Paf 1kg",
+    "preco": 17.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Mortadela Sadia 1kg Familia ",
+    "preco": 9.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Apresuntado Cofril 100g",
+    "preco": 1.69,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Manteiga Lecampo 200g com Sal",
+    "preco": 6.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Requeijao Cremoso Lecampo 350g",
+    "preco": 7.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Bebida Lactea Mais Vida 540g",
+    "preco": 3.49,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Agua Mineral Gold 510ml Natural",
+    "preco": 0.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Suco Conc Vai Bem 1L",
+    "preco": 4.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Energetico Monster 473ml",
+    "preco": 6.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Cachaca Seleta 1L",
+    "preco": 21.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Farinha de Trigo Finna 1kg",
+    "preco": 3.89,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Macarrao Comum Apollo 1kg Spaguete",
+    "preco": 5.49,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Milho Verde Ole 150g LT",
+    "preco": 3.29,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Rosquinha da Vovo 600g",
+    "preco": 5.79,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Salgadinho Elma Chips Doritos 210g",
+    "preco": 12.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Creme de Leite TP Piracanjuba 200g",
+    "preco": 2.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Composto Lacteo Piracanjuba Otimo 400g",
+    "preco": 9.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Bebida Lactea Pirakids TP 200ml",
+    "preco": 1.19,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Bebida Lactea Whey Piracanjuba 15g",
+    "preco": 3.49,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Bala Docile Gelatines 70g e 80g",
+    "preco": 14.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Enxag Bucal Dentrat LEVE 500ml PAGUE 350ml",
+    "preco": 8.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Sabonete Lux Suave 125g",
+    "preco": 2.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Shampoo Above 325ml",
+    "preco": 11.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Locao Hid Skala 400ml",
+    "preco": 6.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Desodorante 250ml Aerosol Rexona",
+    "preco": 19.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Esponja Multiuso Brilhus LEVE 4 PAGUE 3",
+    "preco": 3.49,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Sabao Pastoso Neutral 500g",
+    "preco": 9.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Limpador Cozinha CIF SCH 450ml",
+    "preco": 8.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Essencia Limpadua RAF 100ml",
+    "preco": 6.99,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
+    "produto": "Creme Dental Colgate Total 12 180g",
+    "preco": 3.49,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado Super Top",
+    "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 98895-9045",
     "produto": "Café Cafuso 250g",
     "preco": 13.98,
     "data": "2026-09-26"
