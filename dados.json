@@ -124,32 +124,414 @@
     "estabelecimento": "Supermercado BH",
     "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 3442 0584",
-    "produto": "Café Cafuso 250g",
-    "preco": 13.89,
+    "produto": "Cerveja Michelob Ultra Latao 473ml",
+    "preco": 5.48,
     "data": "2026-09-26"
   },
   {
     "estabelecimento": "Supermercado BH",
     "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 3442 0584",
-    "produto": "Café Meridional 250g",
-    "preco": 14.79,
+    "produto": "Cerveja Corona Trad e Zero Alcool Gf 330ml",
+    "preco": 6.78,
     "data": "2026-09-26"
   },
   {
     "estabelecimento": "Supermercado BH",
     "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 3442 0584",
-    "produto": "Arroz Saboroso 5kg",
+    "produto": "Cerveja Stella Artois Puro Malte Latao 473ml",
+    "preco": 4.98,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Refrigerante H20H Limoneto Lt 350ml",
+    "preco": 2.88,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Refrigerante Guarana Antarctica Zero Pet 2L",
+    "preco": 8.78,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Creme Dental Closup Tripla Protecao 70g",
+    "preco": 2.59,
+    "data": "2026-09-26"
+  },
+        "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Desodorante Aero Rexona 150ml Exc Clinical",
+    "preco": 11.80,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Kit shampoo 350 ml e Condicionador 175ml Dove",
+    "preco": 23.80,
+    "data": "2026-09-26"
+  },
+        "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Detergente em po Brilhante Cx 1.6kg",
+    "preco": 15.98,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Lava Roupas Liquido Brilhante 3L",
+    "preco": 23.90,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Bacon Seara Porcionado kg",
+    "preco": 29.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Carre Suino kg",
+    "preco": 13.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Coxinha da Asa de Frango Uniaves Cong Bandeja kg",
+    "preco": 13.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Filezinho de Frango Sassami Uniaves Cong Bandeja kg",
+    "preco": 17.80,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Linguica Pra Churrasco Aurora kg",
+    "preco": 13.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Coxa de Frango Uniaves Cong Bandeja kg",
+    "preco": 9.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Empanado de Frango Aurora Cong Pcte 900g",
+    "preco": 14.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "File de Tilapia Morada Fish Cong Pact 400g",
+    "preco": 18.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Apresuntado Nobre Peperi Peca Pedaco kg",
+    "preco": 16.80,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Manteiga Itambe Com Sal 500g",
+    "preco": 23.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Petit Suisse Trevo Kids Band com 8 unidades 320g",
+    "preco": 6.78,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Leite Fermentado Trevo Kids com 6 unidades 450g",
+    "preco": 5.98,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Azeite Sardoliva Extra Virgem Vd 500ml",
+    "preco": 24.90,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Leite Condensado Italac Semidesnatado TP 395g",
+    "preco": 5.58,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Creme de Leite Damare TP 200g",
+    "preco": 2.28,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Tomate Pelado Italiano Preferita Lt 400g",
+    "preco": 5.90,
+    "data": "2026-09-26"
+  },
+      {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Molho de Tomate Predilecta Trad Sc 300g",
+    "preco": 1.48,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Ketchup Predilecta Fr 400g",
+    "preco": 4.98,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Milho Verde Minas Mais Lt 170g",
+    "preco": 2.68,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Azeitonas Verdes Vale Fertil Fatiada sem Caroco Pcte 120g",
+    "preco": 4.98,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Pao de Forma Delamassa Trad Pcte 450g",
+    "preco": 4.48,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Bisnaguinha de Leite Lekker Pcte 200g",
+    "preco": 5.48,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Leite em Po Damare Pcte 400g",
+    "preco": 13.90,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Cereal Sucrilhos Leve 440g Pague 390g",
+    "preco": 13.90,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Chocolate Hersheys Barra 75g e 77g e 82g",
+    "preco": 7.48,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Wafer Bis Lacta Pcte 100.8g",
+    "preco": 5.98,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Vinho Portugues Alto Lima 750ml",
+    "preco": 29.90,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Vinho Chileno Pailimo 750ml",
+    "preco": 29.90,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Vinho Nacional Galiotto 1L",
     "preco": 19.98,
     "data": "2026-09-26"
   },
-  {
+        {
     "estabelecimento": "Supermercado BH",
     "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 3442 0584",
-    "produto": "Arroz Sepé 5kg",
-    "preco": 20.9,
+    "produto": "Kit Sabonete Livy 85g com 6 Unidades",
+    "preco": 6.48,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Shampoo Palmolive 315ml",
+    "preco": 8.98,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Locao Hidratante Monange e Paixao 400ml",
+    "preco": 13.80,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Biscoito Espanhol Krit Cuetara Pote 350g",
+    "preco": 1.48,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Absorvente Always Basico com 32",
+    "preco": 14.80,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Papel Higienico Carinho Plus FS 60m com 12",
+    "preco": 12.90,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Fralda Descartavel Huggies Hiper",
+    "preco": 74.90,
+    "data": "2026-09-26"
+  },
+        {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Amaciante de Roupas Downy Concentrado 1L",
+    "preco": 17.80,
+    "data": "2026-09-26"
+  },
+          {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Amaciante de Roupas Ype 2L",
+    "preco": 7.80,
+    "data": "2026-09-26"
+  },
+          {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Desinfetante Azulim 1L",
+    "preco": 4.89,
+    "data": "2026-09-26"
+  },
+          {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Limkpador Perfumado Casaflor 1.75L",
+    "preco": 10.80,
+    "data": "2026-09-26"
+  },
+          {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Toalha Umidecida Mili Baby com 96",
+    "preco": 9.80,
+    "data": "2026-09-26"
+  },
+          {
+    "estabelecimento": "Supermercado BH",
+    "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 3442 0584",
+    "produto": "Racao Para Caes Xisdog Original 15kg",
+    "preco": 57.90,
     "data": "2026-09-26"
   },
   {
@@ -157,7 +539,7 @@
     "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99868-3197",
     "produto": "Café 3 Corações 250g",
-    "preco": 15.98,
+    "preco": 5.90,
     "data": "2026-09-26"
   },
   {
