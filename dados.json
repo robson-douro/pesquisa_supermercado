@@ -667,14 +667,6 @@
     "estabelecimento": "Supermercado Avenida",
     "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99868-3197",
-    "produto": "Acem Bovino kg",
-    "preco": 34.99,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado Avenida",
-    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99868-3197",
     "produto": "Refrigerante Frish 2L",
     "preco": 3.59,
     "data": "2026-09-26"
@@ -747,24 +739,8 @@
     "estabelecimento": "Supermercado Avenida",
     "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99868-3197",
-    "produto": "Carré Suino kg",
-    "preco": 11.99,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado Avenida",
-    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99868-3197",
     "produto": "Acém Bovino kg",
     "preco": 34.99,
-    "data": "2026-09-26"
-  },
-  {
-    "estabelecimento": "Supermercado Avenida",
-    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
-    "telefone": "(27) 99868-3197",
-    "produto": "Costela Bovina Congelada kg",
-    "preco": 19.99,
     "data": "2026-09-26"
   },
   {
