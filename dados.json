@@ -167,7 +167,8 @@
     "preco": 2.59,
     "data": "2026-09-26"
   },
-        "estabelecimento": "Supermercado BH",
+  {
+    "estabelecimento": "Supermercado BH",
     "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 3442 0584",
     "produto": "Desodorante Aero Rexona 150ml Exc Clinical",
@@ -182,7 +183,8 @@
     "preco": 23.80,
     "data": "2026-09-26"
   },
-        "estabelecimento": "Supermercado BH",
+  {
+    "estabelecimento": "Supermercado BH",
     "endereco": "Av. Arthur Haese, 228, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 3442 0584",
     "produto": "Detergente em po Brilhante Cx 1.6kg",
@@ -1289,7 +1291,7 @@
     "estabelecimento": "Supermercado Super Top",
     "endereco": "Rua Vitor Tavaglia, 430, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 98895-9045",
-    "produto": "Uva Thompson Bdg 500g,
+    "produto": "Uva Thompson Bdg 500g",
     "preco": 6.99,
     "data": "2026-09-26"
   },
