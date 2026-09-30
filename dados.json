@@ -538,40 +538,272 @@
     "estabelecimento": "Supermercado Avenida",
     "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99868-3197",
-    "produto": "Café 3 Corações 250g",
-    "preco": 5.90,
+    "produto": "Musculo Bovino kg",
+    "preco": 31.90,
     "data": "2026-09-26"
   },
   {
     "estabelecimento": "Supermercado Avenida",
     "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99868-3197",
-    "produto": "Café Cafuso 250g",
-    "preco": 13.98,
+    "produto": "Coxa e Sobrecoxa Pif Paf com Dorsal kg",
+    "preco": 6.99,
     "data": "2026-09-26"
   },
   {
     "estabelecimento": "Supermercado Avenida",
     "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99868-3197",
-    "produto": "Café Meridional 250g",
-    "preco": 13.79,
+    "produto": "Carre Suino kg",
+    "preco": 11.99,
     "data": "2026-09-26"
   },
   {
     "estabelecimento": "Supermercado Avenida",
     "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99868-3197",
-    "produto": "Arroz Saboroso 5kg",
-    "preco": 17.98,
+    "produto": "Bacon Paleta Frisa kg",
+    "preco": 26.90,
     "data": "2026-09-26"
   },
   {
     "estabelecimento": "Supermercado Avenida",
     "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99868-3197",
-    "produto": "Arroz Sepé 5kg",
-    "preco": 21.9,
+    "produto": "Linguica de Frango Pra Churrasco Frisa kg",
+    "preco": 13.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Coca Cola Tradicional ou Zero 1.5L",
+    "preco": 6.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Cerveja Amistel Latao 473ml",
+    "preco": 4.29,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Arroz Saboroso Tipo1 5kg",
+    "preco": 16.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Leite Integral Porto Alegre 1L",
+    "preco": 5.39,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Detergente Limpol 500ml",
+    "preco": 2.59,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Sabao em Po Brilhante 2.2kg",
+    "preco": 19.49,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Papel Higienico Carinho Ole Folha Dupla 20m",
+    "preco": 8.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Peito de Frango com Osso OI Frango kg",
+    "preco": 10.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Costela Bovina Congelada kg",
+    "preco": 20.98,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Paleta Suina Com Osso e Toucinho kg",
+    "preco": 9.89,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Salsicha Wilson kg",
+    "preco": 7.49,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Acem Bovino kg",
+    "preco": 34.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Refrigerante Frish 2L",
+    "preco": 3.59,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Oleo de Soja Vila Velha 900ml",
+    "preco": 6.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Arroz Sepe Bianco 5kg",
+    "preco": 17.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Farinha de Trigo Regina 1kg",
+    "preco": 3.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Maionese Helmanns 500g",
+    "preco": 8.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Papel Higienico Mimmo Folha Dupla 30m 12 Rolos",
+    "preco": 14.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Sabao em Po Brilhante 1.6kg",
+    "preco": 15.89,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Peito de Frango Com Osso Envelopado OI Frango kg",
+    "preco": 10.49,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Linguica Para Churrasco de Frango kg",
+    "preco": 13.49,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Carre Suino kg",
+    "preco": 11.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Acem Bovino kg",
+    "preco": 34.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Costela Bovina Congelada kg",
+    "preco": 19.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Cerveja Lokal Latao 474ml",
+    "preco": 2.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Refrigerante Coroa Cola Premium 2L",
+    "preco": 4.29,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Leite Integral Capel 1L",
+    "preco": 5.29,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Azeite Gallo Extra Virgem 500ml",
+    "preco": 27.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado Avenida",
+    "endereco": "Av. Arthur Haese, 892, Vale das Palmas, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99868-3197",
+    "produto": "Amaciante Mon Bijou 1.7L",
+    "preco": 8.99,
     "data": "2026-09-26"
   },
   {
