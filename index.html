@@ -226,12 +226,12 @@
 </div>
 
 <script>
-// Variável global que armazenará os dados após a requisição do arquivo JSON
+// Variável global para armazenar os dados após a requisição do arquivo JSON
 let dadosProdutos = [];
 let listaA = [];
 let listaB = [];
 
-// Carrega os dados assincronamente através de um Fetch API
+// Carregando os dados de forma assíncrona através de um Fetch API
 window.onload = function() {
     fetch('dados.json')
         .then(response => {
@@ -284,7 +284,7 @@ function atualizarProdutosDisponiveis(painel) {
     
     const produtosFiltrados = dadosProdutos.filter(item => item.estabelecimento === estSelecionado);
     
-    // Exibe o endereço e o telefone
+    // Exibindo o endereço e o telefone
     if (produtosFiltrados.length > 0 && blocoContato) {
         const infoLoja = produtosFiltrados[0];
         blocoContato.innerHTML = `
