@@ -284,7 +284,7 @@ function atualizarProdutosDisponiveis(painel) {
     
     const produtosFiltrados = dadosProdutos.filter(item => item.estabelecimento === estSelecionado);
     
-    // Exibe o endereço e o telefone apenas uma vez abaixo do botão
+    // Exibe o endereço e o telefone
     if (produtosFiltrados.length > 0 && blocoContato) {
         const infoLoja = produtosFiltrados[0];
         blocoContato.innerHTML = `
