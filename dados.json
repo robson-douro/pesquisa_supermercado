@@ -1275,15 +1275,15 @@
     "estabelecimento": "Supermercado JS",
     "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99845-7511 / (27) 3288-1198",
-    "produto": "Café 3 Corações 250g",
-    "preco": 16.99,
+    "produto": "Iogurte Nestle Bandeja 6 Unidades",
+    "preco": 12.99,
     "data": "2026-09-26"
   },
   {
     "estabelecimento": "Supermercado JS",
     "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99845-7511 / (27) 3288-1198",
-    "produto": "Café Cafuso 250g",
+    "produto": "Margarina Delicia 500g",
     "preco": 13.98,
     "data": "2026-09-26"
   },
@@ -1292,23 +1292,151 @@
     "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99845-7511 / (27) 3288-1198",
     "produto": "Café da Roça 250g",
-    "preco": 13.79,
+    "preco": 9.99,
     "data": "2026-09-26"
   },
   {
     "estabelecimento": "Supermercado JS",
     "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99845-7511 / (27) 3288-1198",
-    "produto": "Arroz Saboroso 5kg",
-    "preco": 17.98,
+    "produto": "Biscoito de Polvilho Cassini",
+    "preco": 9.99,
     "data": "2026-09-26"
   },
   {
     "estabelecimento": "Supermercado JS",
     "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
     "telefone": "(27) 99845-7511 / (27) 3288-1198",
-    "produto": "Arroz Sepé 5kg",
-    "preco": 21.9,
+    "produto": "Batata Doce kg",
+    "preco": 5.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Banana da Terra kg",
+    "preco": 7.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Banana Prata kg",
+    "preco": 4.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Maça Gala / Fuji kg",
+    "preco": 9.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Filé de Peito kg",
+    "preco": 21.90,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Abobrinha Redonda kg",
+    "preco": 6.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Repolho kg",
+    "preco": 3.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Pepino kg",
+    "preco": 3.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Limão kg",
+    "preco": 14.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Manga Tommy kg",
+    "preco": 6.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Batata Inglesa kg",
+    "preco": 7.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Cenoura kg",
+    "preco": 5.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Tomate kg",
+    "preco": 12.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Biscoito Piraquê Recheado Supreme 80g ",
+    "preco": 3.49,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Biscoito Piraquê Água Gergelim 215g ",
+    "preco": 5.99,
+    "data": "2026-09-26"
+  },
+  {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Bolacha de Leite",
+    "preco": 8.99,
+    "data": "2026-09-26"
+  },
+    {
+    "estabelecimento": "Supermercado JS",
+    "endereco": "Praça José Henrique Pereira, 10, Loja 01, Centro, Marechal Floriano, ES, CEP: 29255-000",
+    "telefone": "(27) 99845-7511 / (27) 3288-1198",
+    "produto": "Suco Tropical Vai Bem 1L",
+    "preco": 6.99,
     "data": "2026-09-26"
   }
 ]
